@@ -71,10 +71,12 @@
                 </div>
             </div>
         </nav>
+        <a class="btn btn-primary" href="{{ url('products/new') }}" role="button">{{ __('NOU PRODUCTE') }}</a>
 
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
 </body>
 </html>

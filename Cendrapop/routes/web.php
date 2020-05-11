@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/inici', 'ProductsController@index')->name('inici');
 
+
+//Rutes productes
+
+Route::get('/products/new', 'ProductsController@create')->name('products.new');
+
