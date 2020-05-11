@@ -1,14 +1,17 @@
 <?php
 
 namespace App;
-
+use App\Product;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     use Notifiable;
+	use HasMediaTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'username', 'password', 'photo'
     ];
 
     /**
@@ -28,12 +31,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    const ADMIN_ROLE = 'admin';
+	const DEFAULT_ROLE = 'default';
+
+	public function isAdmin()    {
+
+		if ($this->role === self::ADMIN_ROLE) {
+			return true;
+		}
+		return false;
+	}
+
+	public function products()
+	{
+		return $this->hasMany('App\Product');
+	}
 }
