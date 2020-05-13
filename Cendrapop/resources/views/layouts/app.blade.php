@@ -46,15 +46,13 @@
 								</li>
 							@else
 								<li class="nav-item dropdown">
-									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-										<span class="d-none d-sm-inline text-white">{{ Auth::user()->name }} </span>
-									</a>
-									<a class="btn btn-primary" href="{{ url('products/new') }}" role="button">{{ __('Nou producte') }}</a>
-
-
+								<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 									<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="{{ url('/profile') }}">Perfil
-									</a></li>
+									<li><a class="dropdown-item" href="{{ url('/profile') }}">Perfil</a></li>
+									<li><a class="dropdown-item" href="{{ url('/products/new') }}">Nou producte</a></li>
+
 										@if ( Auth::user()->role == 'admin' )
 											<li><a class="dropdown-item" href="{{ route('categories.show') }}">{{ __('Editar categories') }}</a></li>
 										@endif
@@ -74,7 +72,6 @@
 					</div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>

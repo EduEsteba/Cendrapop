@@ -24,12 +24,12 @@ class Categories extends Seeder
                 'updated_at'=> date_create(),
             ]);
             DB::table('categories')->insert([
-                'title' => 'Motor y Accesoris',
+                'title' => 'Motor i Accesoris',
                 'created_at'=> date_create(),
                 'updated_at'=> date_create(),
             ]);
             DB::table('categories')->insert([
-                'title' => 'Moda y Accesoris',
+                'title' => 'Moda i Accesoris',
                 'created_at'=> date_create(),
                 'updated_at'=> date_create(),
             ]);
