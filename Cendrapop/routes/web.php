@@ -20,12 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/inici', 'ProductsController@index')->name('inici');
 
+//Usuaris
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('profile', 'UsersController@show')->name('profile.show');
+});
 
 //Rutes productes
 
 Route::get('/products/new', 'ProductsController@create')->name('products.new');
-
-
 
 //Categories
 Route::group(['middleware' => 'admin'], function () {

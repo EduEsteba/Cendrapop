@@ -26,11 +26,14 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Cendrapop') }}
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
                 <div class="nav-item">
+
 						<ul class="nav header-nav justify-content-end">
 							@guest
 								<li class="nav-item">
@@ -46,8 +49,12 @@
 									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 										<span class="d-none d-sm-inline text-white">{{ Auth::user()->name }} </span>
 									</a>
+									<a class="btn btn-primary" href="{{ url('products/new') }}" role="button">{{ __('Nou producte') }}</a>
+
 
 									<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="{{ url('/profile') }}">Perfil
+									</a></li>
 										@if ( Auth::user()->role == 'admin' )
 											<li><a class="dropdown-item" href="{{ route('categories.show') }}">{{ __('Editar categories') }}</a></li>
 										@endif
@@ -67,7 +74,6 @@
 					</div>
             </div>
         </nav>
-        <a class="btn btn-primary" href="{{ url('products/new') }}" role="button">{{ __('Nou producte') }}</a>
 
         <main class="py-4">
             @yield('content')
