@@ -63,7 +63,7 @@ class ProductsController extends Controller {
 						$constraint->aspectRatio();
 					}
 					)->save(public_path('uploads/products/' . $filename));
-					$image            = new ProductsImage();
+					$image = new ProductsImage();
 					$image->file_name = $filename;
 					$image->images()->associate($product);
 					$image->save();

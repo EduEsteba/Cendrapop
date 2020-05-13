@@ -31,6 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
 //Rutes productes
 
 Route::get('/products/new', 'ProductsController@create')->name('products.new');
+Route::post('/products/add', 'ProductsController@store')->name('products.add');
+
 
 //Categories
 Route::group(['middleware' => 'admin'], function () {
