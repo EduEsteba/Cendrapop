@@ -61,7 +61,7 @@ class UsersController extends Controller {
 					300, null, function ($constraint) {
 					$constraint->aspectRatio();
 				}
-				)->save(public_path('/uploads/users/' . $filename));
+				)->save(public_path('uploads/users/' . $filename));
 				$user->photo = $filename;
 			}
 			$user->save();
