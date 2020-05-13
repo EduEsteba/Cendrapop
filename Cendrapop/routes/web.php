@@ -23,6 +23,9 @@ Route::get('/inici', 'ProductsController@index')->name('inici');
 //Usuaris
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', 'UsersController@show')->name('profile.show');
+	Route::get('profile/edit/{id}', 'UsersController@edit')->name('profile.edit');
+	Route::post('profile/{id}/update', 'UsersController@update')->name('profile.update');	
+	Route::get('/profile/drop/{id}', 'UsersController@destroy')->name('profile.drop');
 });
 
 //Rutes productes

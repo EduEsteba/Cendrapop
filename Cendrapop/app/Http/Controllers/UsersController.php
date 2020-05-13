@@ -72,5 +72,18 @@ class UsersController extends Controller {
 		return back()->withErrors($validator->errors())->withInput()->with('error', 'ERROR!');
 	}
 
+	
+	/**
+	 * @param $id
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function destroy($id) {
+		$user       = User::find($id);
+		$user->delete();
+
+		return redirect(route('home'));
+	}
+
 
 }
