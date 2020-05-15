@@ -28,10 +28,16 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/profile/drop/{id}', 'UsersController@destroy')->name('profile.drop');
 });
 
-//Rutes productes
-
+//Productes
 Route::get('/products/new', 'ProductsController@create')->name('products.new');
 Route::post('/products/add', 'ProductsController@store')->name('products.add');
+Route::get('/products/show/{id}', 'ProductsController@show')->name('products.show');
+Route::get('/products/edit/{id}', 'ProductsController@edit')->name('products.edit');
+Route::post('/products/{id}/update', 'ProductsController@update')->name('products.update');
+Route::get('/products/drop/{id}', 'ProductsController@destroy')->name('products.drop');
+Route::get('/search', 'ProductsController@search')->name('products.search');
+
+
 
 
 //Categories
@@ -43,3 +49,6 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::post('/category/{id}/update', 'CategoriesController@update')->name('categories.update');
 	Route::get('/category/drop/{id}', 'CategoriesController@destroy')->name('categories.drop');
 });
+
+//Imatges
+Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name('image.drop');
