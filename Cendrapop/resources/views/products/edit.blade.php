@@ -8,14 +8,14 @@
 		<div class="row justify-content-center py-5">
 			<div class="col-md-8">
 				<div class="card">
-					<div class="card-header">{{ __('Editar Producte') }}</div>
+					<div class="card-header">Editar Producte</div>
 
 					<div class="card-body">
 						<form method="POST" action="{{ route('products.update', $product->id) }}" enctype="multipart/form-data">
 							@csrf
 
 							<div class="form-group row">
-								<label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Títol') }}</label>
+								<label for="title" class="col-md-4 col-form-label text-md-right">Títol</label>
 
 								<div class="col-md-6">
 									<input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ $product->title }}" required autofocus>
@@ -29,7 +29,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
+								<label for="category_id" class="col-md-4 col-form-label text-md-right">Categoria</label>
 
 								<div class="col-md-6">
 									<select id="category_id" class="form-control{{ $errors->has('category_id') ? ' is-invalid' : '' }}" name="category_id" value="{{ $product->category }}" required autofocus>

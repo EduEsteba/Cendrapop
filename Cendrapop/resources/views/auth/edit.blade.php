@@ -12,7 +12,7 @@
 				<form method="POST" action="{{ route('profile.update', $user) }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-group row">
-						<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
+						<label for="name" class="col-md-4 col-form-label text-md-right">Nom</label>
 						<div class="col-md-6">
 							<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $user->name }}" required autofocus>
 							@if ($errors->has('name'))
@@ -24,7 +24,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+						<label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
 
 						<div class="col-md-6">
 							<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $user->email }}" required>
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('Penjar foto') }}</label>
+						<label for="photo" class="col-md-4 col-form-label text-md-right">Penjar foto</label>
 
 						<div class="col-md-6">
 							<input id="photo" type="file" class="form-control{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ $user->photo }}">
@@ -54,12 +54,12 @@
 					<div class="form-group row justify-content-center mb-0">
 						<div class="col-md-3">
 							<button type="submit" class="btn btn-success btn-block">
-								{{ __('Guardar') }}
+								Guardar
 							</button>
 						</div>
 						<div class="col-md-3">
 							<a href="{{ route('profile.show') }}" class="btn btn-warning btn-block">
-								{{ __('Cancelar') }}
+								Cancelar
 							</a>
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 			</div>
 		</div>
 		<div class="row justify-content-center">
-			<a class="btn btn-danger" onclick='return confirm("Estas segur que el vols eliminar?")' href="{{ route('profile.drop', $user->id) }}">{{ __('Eliminar perfil') }}</a>
+			<a class="btn btn-danger" onclick='return confirm("Estas segur que el vols eliminar?")' href="{{ route('profile.drop', $user->id) }}">Eliminar perfil</a>
 		</div>
 	</div>
 @endsection

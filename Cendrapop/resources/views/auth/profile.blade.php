@@ -40,11 +40,11 @@
 	</div>
 	<div class="row mt-5">
 			<div class="col-12 col-sm-6 text-center text-sm-left mb-4">
-				<h2 id="products">{{ __('Els meus productes') }}</h2>
+				<h2 id="products">Els meus productes</h2>
 			</div>
 			@if ($products->count() > 0)
 				<div class="col-12 col-sm-6 text-center text-sm-right mb-4">
-					<a class="btn btn-primary" href="{{ route('products.new') }}">{{ __('Nou Producte') }}</a>
+					<a class="btn btn-primary" href="{{ route('products.new') }}">Nou Producte</a>
 				</div>
 			@endif
 		</div>
@@ -53,9 +53,9 @@
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">{{ __('Imatge') }}</th>
-						<th scope="col">{{ __('Nom') }}</th>
-						<th scope="col">{{ __('Accions') }}</th>
+						<th scope="col">Imatge</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Accions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -66,7 +66,7 @@
 							<td><img class="product-thumb" src="/uploads/products/{{ $product->images->first()->file_name }}"></td>
 							<td><a href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a></td>
 							<td>
-								<a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary mr-3">Editar</a><a href="{{ route('products.drop', $product->id) }}" class="btn btn-danger" onclick='return confirm("Estas segur que vols eliminar?")'>{{ __('Eliminar') }}</a>
+								<a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary mr-3">Editar</a><a href="{{ route('products.drop', $product->id) }}" class="btn btn-danger" onclick='return confirm("Estas segur que vols eliminar?")'>Eliminar</a>
 							</td>
 						</tr>
 					@endforeach

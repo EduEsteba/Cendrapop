@@ -37,11 +37,11 @@
 						<ul class="nav header-nav justify-content-end">
 							@guest
 								<li class="nav-item">
-									<a class="nav-link text-white" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">{{ __('Login') }}</a>
+									<a class="nav-link text-white" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">Login</a>
 								</li>
 								<li class="nav-item">
 									@if (Route::has('register'))
-										<a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+										<a class="nav-link text-white" href="{{ route('register') }}">Register</a>
 									@endif
 								</li>
 							@else
@@ -54,7 +54,7 @@
 									<li><a class="dropdown-item" href="{{ url('/products/new') }}">Nou producte</a></li>
 
 										@if ( Auth::user()->role == 'admin' )
-											<li><a class="dropdown-item" href="{{ route('categories.show') }}">{{ __('Editar categories') }}</a></li>
+											<li><a class="dropdown-item" href="{{ route('categories.show') }}">Editar categories</a></li>
 										@endif
 										<li><a class="dropdown-item" href="{{ route('logout') }}"
 										       onclick="event.preventDefault();
