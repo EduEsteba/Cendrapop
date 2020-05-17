@@ -15,6 +15,43 @@ class ProductsController extends Controller {
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
+	public function index() {
+
+		$pagination = 9;
+		$categories = Category::with('products')->orderBy('title', 'asc')->get();
+		$products   = Product::with('category');
+
+		if (request()->category) {
+			$products = $products->whereHas(
+				'category', function ($query) {
+				$query->where('category_id', request()->category);
+			}
+			);
+		}
+
+		if (request()->sort == 'low_high') {
+			$products = $products->orderBy('price');
+		} else if (request()->sort == 'high_low') {
+			$products = $products->orderBy('price', 'desc');
+		}
+
+		$products = $products->paginate($pagination);
+
+		return view('shop', compact('products', 'categories'));
+	}
+
+	public function search(Request $request) {
+		$str = $request->input('str');
+
+		$result = Product::with('images')->where('title', 'like', "%$str%")->get();
+
+		return response()->json($result);
+
+	}
+
+	/**
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
 	public function create() {
 		$categories = Category::pluck('title', 'id');
 
@@ -62,18 +99,18 @@ class ProductsController extends Controller {
 						500, null, function ($constraint) {
 						$constraint->aspectRatio();
 					}
-					)->save(public_path('uploads/products/' . $filename));
-					$image = new ProductsImage();
+					)->save(public_path('/uploads/products/' . $filename));
+					$image            = new ProductsImage();
 					$image->file_name = $filename;
 					$image->images()->associate($product);
 					$image->save();
 				}
 			}
 
-			return back()->with('success', 'Producte creat correctament!');
+			return back()->with('success', 'Product created successfully!');
 		}
 
-		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'ERROR');
+		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problem creating product!');
 	}
 
 	/**
@@ -172,11 +209,5 @@ class ProductsController extends Controller {
 
 		return back()->with('success', 'Product Deleted!');
 	}
-
-	
-
-	
-
-	
 
 }

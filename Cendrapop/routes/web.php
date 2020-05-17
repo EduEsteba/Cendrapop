@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/inici', 'ProductsController@index')->name('inici');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/shop', 'ProductsController@index')->name('shop');
 
 //Usuaris
 Route::group(['middleware' => 'auth'], function () {
