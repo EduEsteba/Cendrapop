@@ -48,3 +48,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 //Imatges
 Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name('image.drop');
+
+
+//Messages
+Route::post('/message/add', 'MessagesController@store')->name('message.add');
