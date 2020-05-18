@@ -25,7 +25,7 @@
 				<div class="col-md-6">
 					<div class="single-product-details-container">
 						<h1 class="product-title my-4">{{ $product->title }}</h1>
-						<p class="product-owner">{{ __('Venut per') }} {{ $product->user->username }}</p>
+						<p class="product-owner">{{ __('Venut per') }} {{ $product->user->name}}</p>
 						<p class="comment-links d-inline-block mb-4">
 							<a href="#comments"><span class="far fa-comment"></span> {{ __('Llegir comentaris') }} ({{ count($messages) }}) </a>
 							<a href="#comments"><span class="fas fa-pencil-alt"></span>{{ __('Esciure un missatge') }}</a>
