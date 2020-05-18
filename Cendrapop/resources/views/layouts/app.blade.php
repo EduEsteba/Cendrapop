@@ -37,11 +37,11 @@
 						<ul class="nav header-nav justify-content-end">
 							@guest
 								<li class="nav-item">
-									<a class="nav-link text-white" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">Login</a>
+									<a class="nav-link text-black" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">Login</a>
 								</li>
 								<li class="nav-item">
 									@if (Route::has('register'))
-										<a class="nav-link text-white" href="{{ route('register') }}">Register</a>
+										<a class="nav-link text-black" href="{{ route('register') }}">Register</a>
 									@endif
 								</li>
 							@else

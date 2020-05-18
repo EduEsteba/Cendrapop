@@ -36,9 +36,7 @@
 				
 			</div>
 		</div>
-
-	</div>
-	<div class="row mt-5">
+		<div class="row mt-5">
 			<div class="col-12 col-sm-6 text-center text-sm-left mb-4">
 				<h2 id="products">Els meus productes</h2>
 			</div>
@@ -77,4 +75,6 @@
 			<p><a class="btn btn-primary" href="{{ route('products.new') }}">Afegeix un producte</a></p>
 		@endif
 	</div>
+	</div>
+	
 @endsection

@@ -15,7 +15,7 @@
 								</a>
 								<nav class="category-menu collapse navbar-collapse" id="categories-menu">
 									<ul class="category-list">
-										<li><a href="{{ route('shop') }}">{{ __('All') }}</a></li>
+										<li><a href="{{ route('shop') }}">{{ __('Totes') }}</a></li>
 										@foreach ($categories as $category)
 											<li class=""><a href="{{ route('shop', ['category' => $category->id]) }}">{{ $category->title }}</a>
 										@endforeach
@@ -30,7 +30,7 @@
 					<div class="shop-header mb-20">
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-12 mb-sm-20 d-flex align-items-center">
-								<p class="result-show-message">{{ __('Showing ') }} {{ $products->firstItem() }}–{{ $products->lastItem() }} of {{ $products->total() }} {{ __(' results') }}</p>
+								<p class="result-show-message">{{ __('Mostrant') }} {{ $products->firstItem() }}–{{ $products->lastItem() }} de {{ $products->total() }} {{ __(' resultats') }}</p>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column flex-sm-row justify-content-start justify-content-md-end align-items-sm-center">
 
@@ -50,9 +50,9 @@
 						@if ($products->count() == 0)
 							<div class="col-12">
 								@guest
-									<p>{{ __('No products on this category yet. Start ') }}<a href="{{ route('login') . '?previous=' . Request::fullUrl() }}">{{ __('selling now!') }}</a></p>
+									<p>{{ __('No hi ha productes en aquesta categoría ') }}<a href="{{ route('login') . '?previous=' . Request::fullUrl() }}">{{ __('Comença a vendra, JA!') }}</a></p>
 								@else
-									<p>{{ __('No products on this category yet. Start ') }}<a href="{{ url('products/new') }}">{{ __('selling now!') }}</a></p>
+									<p>{{ __('No hi ha productes en aquesta categoría ') }}<a href="{{ url('products/new') }}">{{ __('Comença a vendra, JA!') }}</a></p>
 								@endguest
 							</div>
 						@else
@@ -61,14 +61,12 @@
 									<div class="feature-product">
 										<div class="image">
 											<a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">
-												<img src="/uploads/products/{{ $product->images}}" class="img-fluid" alt="">
+												<img src="/uploads/products/{{ $product->images->first()->file_name }}" class="img-fluid" alt="">
 											</a>
-											<a class="hover-icon view" href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1"><i class="lnr lnr-eye"></i></a>
-											<a class="hover-icon heart" href="#" tabindex="-1"><i class="lnr lnr-heart"></i></a>
 										</div>
 										<div class="content">
-											<p class="product-title"><a href="#" tabindex="-1">{{ $product->title }}</a></p>
-											<p class="price">${{ $product->price }}</p>
+											<p class="product-title"><a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">{{ $product->title }}</a></p>
+											<p class="price">{{ $product->price }}€</p>
 										</div>
 									</div>
 								</div>

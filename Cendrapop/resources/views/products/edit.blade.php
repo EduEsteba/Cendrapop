@@ -67,8 +67,6 @@
 
 								<div class="col-md-6 input-group">
 									<div class="input-group-prepend">
-										<span class="input-group-text">$</span>
-										<span class="input-group-text">0.00</span>
 									</div>
 									<input type="text" id="price" name="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" value="{{ $product->price }}" required>
 
@@ -77,6 +75,7 @@
 											<strong>{{ $errors->first('price') }}</strong>
 										</span>
 									@endif
+									<span class="input-group-text">€</span>
 								</div>
 							</div>
 
