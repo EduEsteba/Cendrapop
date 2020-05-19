@@ -15,6 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -55,6 +57,8 @@
 
 										@if ( Auth::user()->role == 'admin' )
 											<li><a class="dropdown-item" href="{{ route('categories.show') }}">Editar categories</a></li>
+											<li><a class="dropdown-item" href="{{ route('live_search') }}">Control d'usuaris</a></li>
+
 										@endif
 										<li><a class="dropdown-item" href="{{ route('logout') }}"
 										       onclick="event.preventDefault();

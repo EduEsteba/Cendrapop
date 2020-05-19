@@ -33,9 +33,6 @@ Route::post('/products/{id}/update', 'ProductsController@update')->name('product
 Route::get('/products/drop/{id}', 'ProductsController@destroy')->name('products.drop');
 Route::get('/search', 'ProductsController@search')->name('products.search');
 
-
-
-
 //Categories
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/category/show', 'CategoriesController@index')->name('categories.show');
@@ -44,6 +41,12 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/category/edit/{id}', 'CategoriesController@edit')->name('categories.edit');
 	Route::post('/category/{id}/update', 'CategoriesController@update')->name('categories.update');
 	Route::get('/category/drop/{id}', 'CategoriesController@destroy')->name('categories.drop');
+});
+
+//Control d'usuaris
+Route::group(['middleware' => 'admin'], function () {
+	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
+	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
 });
 
 //Imatges
