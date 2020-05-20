@@ -1,34 +1,5 @@
 <?php
-use Illuminate\Support\Facades\Response;
-use App\User;
 
-Route::get('/users/xml', function() {
-    $users = User::all();
-
-	$xml = new XMLWriter();
-    $xml->openMemory();
-    $xml->startDocument();
-    $xml->startElement('users');
-    foreach($users as $user) {
-        $xml->startElement('data');
-		$xml->writeAttribute('id', $user->id);
-		$xml->writeAttribute('nom', $user->name);
-
-		$xml->endElement();
-
-    }
-    $xml->endElement();
-	$xml->endDocument();
-	$filename = "xml/example.xml";
-header("Content-Type: text/html/force-download");
-header("Content-Disposition: attachment; filename=".$filename.".xml");
-
-
-    $content = $xml->outputMemory();
-	$xml = null;
-
-    return response($content)->header('Content-Type', 'text/xml');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -92,5 +63,9 @@ Route::group(['middleware' => 'admin'], function () {
 Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name('image.drop');
 
 
-//Messages
+//Comentaris
 Route::post('/message/add', 'MessagesController@store')->name('message.add');
+
+//XML
+Route::get('/users/xml','XMLController@download')->name('usuaris.xml');
+
