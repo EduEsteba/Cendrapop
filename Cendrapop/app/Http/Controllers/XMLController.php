@@ -33,7 +33,7 @@ class XMLController extends Controller
 
         $xml->endElement();
 	    $xml->endDocument();
-	    $filename = "xml/example";
+	    $filename = now()->format('Y-m-d-H-i-s');
         header("Content-Type: text/html/force-download");
         header("Content-Disposition: attachment; filename=".$filename.".xml");
 
