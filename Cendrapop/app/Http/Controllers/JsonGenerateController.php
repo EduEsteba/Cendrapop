@@ -24,8 +24,15 @@ class JsonGenerateController extends Controller
             $data['items'][$key] = [
                 'id' => $post->id,
                 'nom' => $post->name,
+                'email' =>$post->email,
+                'rol' =>$post->role,
+                'password' =>$post->password,
             ];
         }
+        $filename = now()->format('Y-m-d-H-i-s');
+        header("Content-Type: text/html/force-download");
+        header("Content-Disposition: attachment; filename=".$filename.".json");
         return $data;
+
     }
 }

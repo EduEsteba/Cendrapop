@@ -47,7 +47,13 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
 	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
+
+	//JSON
 	Route::get('/live_search/json', 'JsonGenerateController@json')->name('json');
+
+	//XML
+	Route::get('/users/xml','XMLController@download')->name('usuaris.xml');
+
 
 });
 
@@ -66,6 +72,4 @@ Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name
 //Comentaris
 Route::post('/message/add', 'MessagesController@store')->name('message.add');
 
-//XML
-Route::get('/users/xml','XMLController@download')->name('usuaris.xml');
 
