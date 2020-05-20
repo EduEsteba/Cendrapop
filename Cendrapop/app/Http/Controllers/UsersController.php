@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
 
 class UsersController extends Controller {
 
@@ -45,15 +48,24 @@ class UsersController extends Controller {
 			$data, [
 				     'name'     => ['required', 'string', 'max:255'],
 					 'email'    => ['required', 'string', 'email', 'max:255'],				     
-					 ''    => ['required', 'string', 'email', 'max:255'],
-				     'photo'    => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
-			     ]
+				     'password' => ['required', 'string', 'min:6', 'confirmed'],
+					 'photo'    => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
+
+				 ]
+
 		);
+
+
 
 		if ($validator->passes()) {
 			$user           = Auth::user();
 			$user->name     = $request->get('name');
 			$user->email    = $request->get('email');
+			$user->password    = $request->get('password');
+
+		
+
+
 
 			if ($request->hasFile('photo')) {
 				$photo    = $request->file('photo');
@@ -67,10 +79,15 @@ class UsersController extends Controller {
 			}
 			$user->save();
 
-			return redirect(route('profile.show'))->with('success', 'Les dades són correctes!');
-			}
+			
+
+		}
+
+			
 
 		return back()->withErrors($validator->errors())->withInput()->with('error', 'ERROR!');
+
+
 	}
 
 	

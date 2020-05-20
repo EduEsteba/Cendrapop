@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 
-class LiveSearch extends Controller
+class LiveSearchProducts extends Controller
 {
     function index()
     {
-     return view('live_search');
+     return view('live_search_products');
     }
 
     function action(Request $request)
@@ -20,18 +19,16 @@ class LiveSearch extends Controller
       $query = $request->get('query');
       if($query != '')
       {
-       $data = DB::table('users')
+       $data = DB::table('products')
          ->where('id', 'like', '%'.$query.'%')
-         ->orWhere('name', 'like', '%'.$query.'%')
-         ->orWhere('email', 'like', '%'.$query.'%')
-         ->orWhere('role', 'like', '%'.$query.'%')
+         ->orWhere('title', 'like', '%'.$query.'%')
          ->orderBy('id', 'asc')
          ->get();
          
       }
       else
       {
-       $data = DB::table('users')
+       $data = DB::table('products')
          ->orderBy('id', 'asc')
          ->get();
       }
@@ -43,15 +40,13 @@ class LiveSearch extends Controller
         $output .= '
         <tr>
          <td>'.$row->id.'</td>
-         <td>'.$row->name.'</td>
-         <td>'.$row->email.'</td>
-         <td>'.$row->role.'</td>
+         <td>'.$row->title.'</td>
+         <td>'.$row->description.'</td>
+         <td>'.$row->price.'</td>
        
          <td>
               <a class="btn btn-info" href="profile/drop/'.$row->id.'">Eliminar</a>
          </td>
-
-
 
         ';
        }

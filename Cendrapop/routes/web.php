@@ -1,4 +1,34 @@
 <?php
+use Illuminate\Support\Facades\Response;
+use App\User;
+
+Route::get('/users/xml', function() {
+    $users = User::all();
+
+	$xml = new XMLWriter();
+    $xml->openMemory();
+    $xml->startDocument();
+    $xml->startElement('users');
+    foreach($users as $user) {
+        $xml->startElement('data');
+		$xml->writeAttribute('id', $user->id);
+		$xml->writeAttribute('nom', $user->name);
+
+		$xml->endElement();
+
+    }
+    $xml->endElement();
+	$xml->endDocument();
+	$filename = "xml/example.xml";
+header("Content-Type: text/html/force-download");
+header("Content-Disposition: attachment; filename=".$filename.".xml");
+
+
+    $content = $xml->outputMemory();
+	$xml = null;
+
+    return response($content)->header('Content-Type', 'text/xml');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +77,14 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
 	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
 	Route::get('/live_search/json', 'JsonGenerateController@json')->name('json');
+
+});
+
+//Control de productes
+Route::group(['middleware' => 'admin'], function () {
+	Route::get('/live_search_products', 'LiveSearchProducts@index')->name('live_search_products');
+	Route::get('/live_search_products/action', 'LiveSearchProducts@action')->name('live_search_products.action');
+	Route::get('/live_search_products/json', 'JsonGenerateController@json')->name('json');
 
 });
 
