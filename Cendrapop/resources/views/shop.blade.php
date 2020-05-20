@@ -2,7 +2,6 @@
 
 @section('content')
 	<div class="shop-page-content pb-5">
-		@include('parts.search')
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">

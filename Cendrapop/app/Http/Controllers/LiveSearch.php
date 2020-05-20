@@ -25,14 +25,14 @@ class LiveSearch extends Controller
          ->orWhere('name', 'like', '%'.$query.'%')
          ->orWhere('email', 'like', '%'.$query.'%')
          ->orWhere('role', 'like', '%'.$query.'%')
-         ->orderBy('id', 'desc')
+         ->orderBy('id', 'asc')
          ->get();
          
       }
       else
       {
        $data = DB::table('users')
-         ->orderBy('id', 'desc')
+         ->orderBy('id', 'asc')
          ->get();
       }
       $total_row = $data->count();
@@ -46,7 +46,8 @@ class LiveSearch extends Controller
          <td>'.$row->name.'</td>
          <td>'.$row->email.'</td>
          <td>'.$row->role.'</td>
-        </tr>
+
+
         ';
        }
       }
@@ -54,7 +55,7 @@ class LiveSearch extends Controller
       {
        $output = '
        <tr>
-        <td align="center" colspan="5">No Data Found</td>
+        <td align="center" colspan="5">Cap usuari amb aquest nom</td>
        </tr>
        ';
       }

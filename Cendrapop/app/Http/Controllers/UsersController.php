@@ -44,7 +44,8 @@ class UsersController extends Controller {
 		$validator = validator()->make(
 			$data, [
 				     'name'     => ['required', 'string', 'max:255'],
-				     'email'    => ['required', 'string', 'email', 'max:255'],
+					 'email'    => ['required', 'string', 'email', 'max:255'],				     
+					 ''    => ['required', 'string', 'email', 'max:255'],
 				     'photo'    => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
 			     ]
 		);

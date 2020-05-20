@@ -31,7 +31,6 @@ Route::get('/products/show/{id}', 'ProductsController@show')->name('products.sho
 Route::get('/products/edit/{id}', 'ProductsController@edit')->name('products.edit');
 Route::post('/products/{id}/update', 'ProductsController@update')->name('products.update');
 Route::get('/products/drop/{id}', 'ProductsController@destroy')->name('products.drop');
-Route::get('/search', 'ProductsController@search')->name('products.search');
 
 //Categories
 Route::group(['middleware' => 'admin'], function () {
@@ -47,6 +46,8 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
 	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
+	Route::get('/live_search/json', 'JsonGenerateController@json')->name('json');
+
 });
 
 //Imatges

@@ -40,14 +40,6 @@ class ProductsController extends Controller {
 		return view('shop', compact('products', 'categories'));
 	}
 
-	public function search(Request $request) {
-		$str = $request->input('str');
-
-		$result = Product::with('images')->where('title', 'like', "%$str%")->get();
-
-		return response()->json($result);
-
-	}
 
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

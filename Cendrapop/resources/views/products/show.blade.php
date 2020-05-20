@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-	@include('parts.search')
 	<div class="single-product-page-content pb-5">
 		<div class="container">
 			<div class="alert">

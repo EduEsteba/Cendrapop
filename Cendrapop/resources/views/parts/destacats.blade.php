@@ -1,5 +1,7 @@
 
 <div class="feature-products pt-5">
+<a class="btn btn-primary" href="{{ route('shop') }}">Mostrar tots els productes</a>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 mb-4">

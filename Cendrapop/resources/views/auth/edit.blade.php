@@ -38,6 +38,20 @@
 					</div>
 
 					<div class="form-group row">
+						<label for="email" class="col-md-4 col-form-label text-md-right">Contrasenya</label>
+
+						<div class="col-md-6">
+							<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ $user->password }}" required>
+
+							@if ($errors->has(''))
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $errors->first('email') }}</strong>
+								</span>
+							@endif
+						</div>
+					</div>
+
+					<div class="form-group row">
 						<label for="photo" class="col-md-4 col-form-label text-md-right">Penjar foto</label>
 
 						<div class="col-md-6">
