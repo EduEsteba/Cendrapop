@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-class LiveSearchProducts extends Controller
+
+class LiveSearchComentaris extends Controller
 {
+    
     function index()
     {
-     return view('live_search_products');
+     return view('live_search_comentaris');
     }
 
     function action(Request $request)
@@ -19,16 +21,16 @@ class LiveSearchProducts extends Controller
       $query = $request->get('query');
       if($query != '')
       {
-       $data = DB::table('products')
+       $data = DB::table('messages')
          ->where('id', 'like', '%'.$query.'%')
-         ->orWhere('title', 'like', '%'.$query.'%')
+         ->orWhere('content', 'like', '%'.$query.'%')
          ->orderBy('id', 'asc')
          ->get();
          
       }
       else
       {
-       $data = DB::table('products')
+       $data = DB::table('messages')
          ->orderBy('id', 'asc')
          ->get();
       }
@@ -40,9 +42,9 @@ class LiveSearchProducts extends Controller
         $output .= '
         <tr>
          <td>'.$row->id.'</td>
-         <td>'.$row->title.'</td>
-         <td>'.$row->description.'</td>
-         <td>'.$row->price.'</td>
+         <td>'.$row->user_id.'</td>
+         <td>'.$row->product_id.'</td>
+         <td>'.$row->content.'</td>
        
 
         ';
@@ -52,7 +54,7 @@ class LiveSearchProducts extends Controller
       {
        $output = '
        <tr>
-        <td align="center" colspan="5">Cap producte amb aquest nom</td>
+        <td align="center" colspan="5">Cap comentari</td>
        </tr>
        ';
       }

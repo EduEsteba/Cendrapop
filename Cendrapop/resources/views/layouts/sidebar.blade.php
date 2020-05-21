@@ -24,7 +24,9 @@
         @if ( Auth::user()->role == 'admin' )
 			<a class="list-group-item list-group-item-action bg-light" href="{{ route('categories.show') }}"><i class="far fa-edit"></i> Editar categories</a>
 			<a class="list-group-item list-group-item-action bg-light"href="{{ route('live_search') }}"><i class="fas fa-users"></i> Control d'usuaris</a>
-			<a class="list-group-item list-group-item-action bg-light" href="{{ route('live_search_products') }}"><i class="fas fa-book-open"></i> Productes</a>
+			<a class="list-group-item list-group-item-action bg-light" href="{{ route('live_search_products') }}"><i class="fas fa-book-open"></i> Control Productes</a>
+      <a class="list-group-item list-group-item-action bg-light" href="{{ route('live_search_comentaris') }}"><i class="fas fa-comments"></i> </i> Comentaris</a>
+
 		@endif
 
       </div>
