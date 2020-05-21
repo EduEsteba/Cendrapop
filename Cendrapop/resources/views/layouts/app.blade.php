@@ -20,9 +20,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/css.css') }}" rel="stylesheet">
+
 </head>
 <body>
-    <div id="app">
+    <div id="app col-sm-9 col-md-9 col-lg-9">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -58,6 +60,8 @@
 										@if ( Auth::user()->role == 'admin' )
 											<li><a class="dropdown-item" href="{{ route('categories.show') }}">Editar categories</a></li>
 											<li><a class="dropdown-item" href="{{ route('live_search') }}">Control d'usuaris</a></li>
+											<li><a class="dropdown-item" href="{{ route('live_search_products') }}">Control de Productes</a></li>
+
 
 										@endif
 										<li><a class="dropdown-item" href="{{ route('logout') }}"
@@ -82,7 +86,6 @@
         </main>
 
     </div>
-	<script src="{{ asset('js/livesearch.js') }}"></script>
 
 </body>
 </html>

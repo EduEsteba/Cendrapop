@@ -47,10 +47,8 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
 	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
-
 	//JSON
 	Route::get('/live_search/json', 'JsonGenerateController@json')->name('json');
-
 	//XML
 	Route::get('/users/xml','XMLController@download')->name('usuaris.xml');
 
@@ -61,8 +59,10 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/live_search_products', 'LiveSearchProducts@index')->name('live_search_products');
 	Route::get('/live_search_products/action', 'LiveSearchProducts@action')->name('live_search_products.action');
-	Route::get('/live_search_products/json', 'JsonGenerateController@json')->name('json');
-
+	//JSON
+	Route::get('/live_search_products/json', 'JsonGenerateController@json')->name('products_json');
+	//XML
+	Route::get('/products/xml','XMLController@download')->name('products_xml');
 });
 
 //Imatges

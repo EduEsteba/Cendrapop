@@ -1,16 +1,17 @@
 @extends('layouts.app')
 @section('content')
   <div class="container box">
-   <h3 align="center">Llista d'usuaris</h3><br />
+   <h3 align="center">Llista de productes</h3><br />
    <div class="panel panel-default">
-    <div class="panel-heading">Introdueix el nom d'usuari:</div>
+    <div class="panel-heading">Introdueix el nom del producte:</div>
     <div class="panel-body">
      <div class="form-group">
-      <input type="text" name="search" id="search" class="form-control" placeholder="Usuari" />
+      <input type="text" name="searchproducte" id="searchproducte" class="form-control" placeholder="Producte" />
      </div>
      <div class="table-responsive">
-      <h3 align="center">Usuaris totals : <span id="total_records"></span></h3>
-      <a class="btn btn-primary" href="{{ route('json') }}">Mostrar tots els productes</a>
+      <h3 align="center">Productes totals : <span id="total_records"></span></h3>
+      <a class="btn btn-primary" href="{{ route('json') }}">JSON</a>
+      <a class="btn btn-primary" href="{{ route('usuaris.xml') }}">XML</a>
 
       <table class="table table-striped table-bordered" style="text-align: center">
        <thead>
@@ -51,7 +52,7 @@ $(document).ready(function(){
   })
  }
 
- $(document).on('keyup', '#search', function(){
+ $(document).on('keyup', '#searchproducte', function(){
   var query = $(this).val();
   fetch_customer_data(query);
  });

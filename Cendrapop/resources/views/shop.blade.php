@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
 
 @section('content')
-	<div class="shop-page-content pb-5">
+	<div class="page-content-wrapper">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
