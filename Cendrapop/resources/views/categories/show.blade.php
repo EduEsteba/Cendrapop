@@ -28,7 +28,7 @@
 					<tr>
 						<th>{{ $loop->iteration }}</th>
 						<td>{{ $category->title }}</td>
-						<td></td>
+						<td><a href="{{ route('shop', ['category' => $category->id]) }}">{{ $category->products->count() }}</a></td>
 						<td>
 							<a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary mr-3"><i class="fas fa-edit"></i> Edit</a><a href="{{ route('categories.drop', $category->id) }}" class="btn btn-danger" onclick='return confirm("Are you sure?")'><i class="fas fa-trash"></i> Eliminar</a>
 						</td>
