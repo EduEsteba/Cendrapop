@@ -74,6 +74,8 @@ Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name
 //Api
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/users', 'ApiController@indexUsers')->name('usersapi');
+	Route::get('/products', 'ApiController@indexProducts')->name('productsapi');
+
 });
 
 
