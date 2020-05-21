@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\User;
 use App\Product;
+use App\Message;
 
 class XMLController extends Controller 
 {
@@ -59,6 +60,36 @@ class XMLController extends Controller
                 $xml->writeElement('price', $product->price);
                 $xml->writeElement('user_id', $product->user_id);
                 $xml->writeElement('category_id', $product->category_id);
+                $xml->endElement();
+            }
+
+        $xml->endElement();
+	    $xml->endDocument();
+	    $filename = now()->format('Y-m-d-H-i-s');
+        header("Content-Type: text/html/force-download");
+        header("Content-Disposition: attachment; filename=".$filename.".xml");
+
+
+    $content = $xml->outputMemory();
+	$xml = null;
+
+    return response($content)->header('Content-Type', 'text/xml');
+    }
+
+    public function download_comentaris(){
+        $products = Message::all();
+	    $xml = new \XMLWriter();
+        $xml->openMemory();
+        $xml->startDocument();
+        $xml->startElement('Missatges');
+            foreach($products as $product) {
+                $xml->startElement('Missatge');
+                $xml->writeElement('id', $product->id);
+                $xml->writeElement('created_at', $product->created_at);        
+                $xml->writeElement('updated_at', $product->updated_at);
+                $xml->writeElement('user_id', $product->user_id);
+                $xml->writeElement('product_id', $product->product_id);
+                $xml->writeElement('contingut', $product->content);
                 $xml->endElement();
             }
 

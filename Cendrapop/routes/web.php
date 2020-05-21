@@ -75,6 +75,8 @@ Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/users', 'ApiController@indexUsers')->name('usersapi');
 	Route::get('/products', 'ApiController@indexProducts')->name('productsapi');
+	Route::get('/comentaris', 'ApiController@indexComentaris')->name('comentarisapi');
+
 
 });
 
@@ -85,6 +87,11 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::post('/message/add', 'MessagesController@store')->name('message.add');
 	Route::get('/live_search_comentaris', 'LiveSearchComentaris@index')->name('live_search_comentaris');
 	Route::get('/live_search_products/action', 'LiveSearchComentaris@action')->name('live_search_comentaris.action');
+	//JSON
+	Route::get('/live_search_missatges', 'JsonGenerateController@jsonComentaris')->name('comentaris_json');
+		//XML
+		Route::get('/comentaris/xml','XMLController@download_comentaris')->name('comentaris_xml');
+
 
 
 });
