@@ -25,64 +25,14 @@
 
 </head>
 <body>
-    <div id="app col-sm-9 col-md-9 col-lg-9">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="col-sm-10 col-md-10 col-lg-10" >
+        <nav class="navbar navbar-expand-lg navbar-light transparent shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Cendrapop') }}
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-
-                <div class="nav-item">
-
-						<ul class="nav header-nav justify-content-end">
-							@guest
-								<li class="nav-item">
-									<a class="nav-link text-black" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">Login</a>
-								</li>
-								<li class="nav-item">
-									@if (Route::has('register'))
-										<a class="nav-link text-black" href="{{ route('register') }}">Register</a>
-									@endif
-								</li>
-							@else
-								<li class="nav-item dropdown">
-								<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-									<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="{{ url('/profile') }}">Perfil</a></li>
-									<li><a class="dropdown-item" href="{{ url('/products/new') }}">Nou producte</a></li>
-
-										@if ( Auth::user()->role == 'admin' )
-											<li><a class="dropdown-item" href="{{ route('categories.show') }}">Editar categories</a></li>
-											<li><a class="dropdown-item" href="{{ route('live_search') }}">Control d'usuaris</a></li>
-											<li><a class="dropdown-item" href="{{ route('live_search_products') }}">Control de Productes</a></li>
-
-
-										@endif
-										<li><a class="dropdown-item" href="{{ route('logout') }}"
-										       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-												{{ __('Logout') }}
-											</a>
-											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-												@csrf
-											</form>
-										</li>
-									</ul>
-								</li>
-							@endguest
-						</ul>
-					</div>
+                
             </div>
         </nav>
 	
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 

@@ -1,12 +1,14 @@
 @extends('layouts.app')
-@section('content')
+@extends('layouts.sidebar')
 
-	<div class="container py-2 py-md-4">
+@section('content')
+<div class="page-content-wrapper">
+	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-lg">
 				<div class="alert">
 					@include('alerts')
-					<h1 class="h2 text-center">El meu compte</h1>
+					<h1 class="text-center">El meu compte</h1>
 				</div>
 			</div>
 		</div>
@@ -29,20 +31,22 @@
 				<div class="row my-3">
 					<div class="col-md-6 offset-md-4">
 						<a href="{{ route('profile.edit', $user->id) }}" class="btn btn-primary">
-							Editar Perfil
+						<i class="far fa-edit"></i> Editar Perfil
 						</a>
 					</div>
 				</div>
 				
 			</div>
 		</div>
-		<div class="row mt-5">
-			<div class="col-12 col-sm-6 text-center text-sm-left mb-4">
-				<h2 id="products">Els meus productes</h2>
+		<br>
+		<div class="row">
+			<div class="col-12 col-sm-6 text-center text-sm-left mb-4 ">
+				<h2 id="products text-center">Els meus productes</h2>
 			</div>
+		
 			@if ($products->count() > 0)
 				<div class="col-12 col-sm-6 text-center text-sm-right mb-4">
-					<a class="btn btn-primary" href="{{ route('products.new') }}">Nou Producte</a>
+					<a class="btn btn-success" href="{{ route('products.new') }}"><i class="fas fa-plus"></i> Nou Producte</a>
 				</div>
 			@endif
 		</div>
@@ -51,7 +55,6 @@
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">Imatge</th>
 						<th scope="col">Nom</th>
 						<th scope="col">Accions</th>
 					</tr>
@@ -61,10 +64,9 @@
 					@foreach ($products as $product)
 						<tr>
 							<th>{{ $loop->iteration }}</th>
-							<td><img class="product-thumb" src="/uploads/products/{{ $product->images->first()->file_name }}"></td>
 							<td><a href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a></td>
 							<td>
-								<a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary mr-3">Editar</a><a href="{{ route('products.drop', $product->id) }}" class="btn btn-danger" onclick='return confirm("Estas segur que vols eliminar?")'>Eliminar</a>
+								<a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary mr-3"><i class="far fa-edit"></i> Editar</a><a href="{{ route('products.drop', $product->id) }}" class="btn btn-danger" onclick='return confirm("Estas segur que vols eliminar?")'><i class="fas fa-trash"></i> Eliminar</a>
 							</td>
 						</tr>
 					@endforeach
@@ -72,8 +74,9 @@
 			</table>
 		@else
 			<p>No tens cap producte, a que esperes i comença a vendre!!</p>
-			<p><a class="btn btn-primary" href="{{ route('products.new') }}">Afegeix un producte</a></p>
+			<p><a class="btn btn-success" href="{{ route('products.new') }}"><i class="fas fa-plus"></i> Afegeix un producte</a></p>
 		@endif
+	</div>
 	</div>
 	</div>
 	

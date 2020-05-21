@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
 
 @section('content')
 	<div class="container">
@@ -15,7 +16,7 @@
 							@csrf
 
 							<div class="form-group row">
-								<label for="title" class="col-md-4 col-form-label text-md-right">Títol</label>
+								<label for="title" class="col-md-4 col-form-label text-md-right"> Títol</label>
 
 								<div class="col-md-6">
 									<input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ $category->title }}" required autofocus>
@@ -29,13 +30,13 @@
 							</div>
 							<div class="form-group row mb-0 justify-content-center">
 								<div class="col-md-3">
-									<button type="submit" class="btn btn-primary btn-block">
-										Actualitzar
+									<button type="submit" class="btn btn-success btn-block">
+									<i class="fas fa-edit"></i> Actualitzar
 									</button>
 								</div>
 								<div class="col-md-3">
 									<a href="{{ route('categories.show') }}" class="btn btn-danger btn-block">
-										Cancelar
+									<i class="fas fa-trash"></i> Cancelar
 									</a>
 								</div>
 							</div>

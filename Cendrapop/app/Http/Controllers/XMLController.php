@@ -24,11 +24,7 @@ class XMLController extends Controller
                 $xml->writeElement('email', $user->email);
                 $xml->writeElement('role', $user->role);
                 $xml->writeElement('password', $user->password);
-
                 $xml->endElement();
-
-
-
             }
 
         $xml->endElement();

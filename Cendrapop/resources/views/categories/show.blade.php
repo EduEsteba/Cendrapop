@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
 
 @section('content')
 
@@ -10,7 +11,7 @@
 			<h2>{{ __('Categories') }}</h2>
 		</div>
 		<div class="text-right">
-			<a href="{{ route('categories.new') }}" class="btn btn-primary mb-3">Nova Categoria</a>
+			<a href="{{ route('categories.new') }}" class="btn btn-success mb-3"><i class="fas fa-plus"></i> Nova Categoria</a>
 		</div>
 		<table class="table">
 			<thead class="thead-dark">
@@ -29,7 +30,7 @@
 						<td>{{ $category->title }}</td>
 						<td></td>
 						<td>
-							<a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary mr-3">Edit</a><a href="{{ route('categories.drop', $category->id) }}" class="btn btn-danger" onclick='return confirm("Are you sure?")'>{{ __('Delete') }}</a>
+							<a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary mr-3"><i class="fas fa-edit"></i> Edit</a><a href="{{ route('categories.drop', $category->id) }}" class="btn btn-danger" onclick='return confirm("Are you sure?")'><i class="fas fa-trash"></i> Eliminar</a>
 						</td>
 					</tr>
 				@endforeach

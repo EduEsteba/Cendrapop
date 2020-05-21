@@ -1,14 +1,16 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
+
 @section('content')
 
-	<div class="container py-5">
+	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				@include('alerts')
 			</div>
 		</div>
 		<div class="row justify-content-center">
-			<div class="col-9 card-body">
+			<div class="col-12 card-body center">
 				<form method="POST" action="{{ route('profile.update', $user) }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-group row">

@@ -1,9 +1,10 @@
-<div class="d-flex" id="wrapper">
+<div class="d-flex" >
 
     <!-- Sidebar -->
-    <div class="bg-light border-right col-md-2" id="sidebar-wrapper">
+    <div class="bg-light border-right col-md-2" >
       <div class="sidebar-heading">
-        <img src="{{url('/logo/logo_transparent.png')}}" class="img-fluid">
+      <a class="navbar-brand" href="{{ url('/') }}">        <img src="{{url('/logo/logo_transparent.png')}}" class="img-fluid">
+</a>
       </div>
             <span class="subtitle">Benvingut:  <b> {{ Auth::user()->name }}</b></span>
         
@@ -18,8 +19,8 @@
 											</form></a>
             
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="far fa-user"></i> Perfil</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fas fa-plus"></i> Nou Producte</a>
+        <a href="{{ route('profile.show') }}" class="list-group-item list-group-item-action bg-light"><i class="far fa-user"></i> Perfil</a>
+        <a href="{{ route('products.add') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-plus"></i> Nou Producte</a>
         
         @if ( Auth::user()->role == 'admin' )
 			<a class="list-group-item list-group-item-action bg-light" href="{{ route('categories.show') }}"><i class="far fa-edit"></i> Editar categories</a>

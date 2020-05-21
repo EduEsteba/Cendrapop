@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
+
 @section('content')
   <div class="container box">
    <h3 align="center">Llista d'usuaris</h3><br />
