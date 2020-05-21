@@ -1,11 +1,10 @@
 <div class="d-flex" >
-
-    <!-- Sidebar -->
     <div class="bg-light border-right col-md-2" >
       <div class="sidebar-heading">
       <a class="navbar-brand" href="{{ url('/') }}">        <img src="{{url('/logo/logo_transparent.png')}}" class="img-fluid">
 </a>
       </div>
+      
             <span class="subtitle">Benvingut:  <b> {{ Auth::user()->name }}</b></span>
         
             

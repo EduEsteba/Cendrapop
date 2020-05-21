@@ -14,8 +14,10 @@
 
 Auth::routes();
 
-Route::get('/', 'ProductsController@index')->name('home');
+Route::get('/home', 'ProductsController@index')->name('home');
 Route::get('/shop', 'ProductsController@index')->name('shop');
+Route::get('/', 'ProductsController@index')->name('home');
+
 
 //Usuaris
 Route::group(['middleware' => 'auth'], function () {
@@ -68,6 +70,11 @@ Route::group(['middleware' => 'admin'], function () {
 
 //Imatges
 Route::get('/products/image/drop/{id}', 'ProductsImageController@destroy')->name('image.drop');
+
+//Api
+Route::group(['middleware' => 'admin'], function () {
+	Route::get('/users', 'ApiController@indexUsers')->name('usersapi');
+});
 
 
 //Comentaris

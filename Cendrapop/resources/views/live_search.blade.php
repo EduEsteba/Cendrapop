@@ -14,6 +14,7 @@
      <div class="table-responsive">
       <h3 align="center">Usuaris totals : <span id="total_records"></span></h3>
       <a class="btn btn-primary" href="{{ route('json') }}"><i class="fas fa-download"></i> JSON</a>
+      <a class="btn btn-primary" href="{{ route('usersapi') }}"><i class="fas fa-info-circle"></i> API JSON</a>
       <a class="btn btn-primary" href="{{ route('usuaris.xml') }}"><i class="fas fa-download"></i> XML</a>
       <br>
       <br>
