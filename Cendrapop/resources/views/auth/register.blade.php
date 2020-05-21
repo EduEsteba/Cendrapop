@@ -1,14 +1,40 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-	<div class="container">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Cendrapop') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/34547ed440.js" crossorigin="anonymous"></script>	  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/css.css') }}" rel="stylesheet">
+
+</head>
+<body>
+    <div class="col-sm-12 col-md-12 col-lg-12" >
+            <div class="container">
+			<div class="container">
 		<div class="alert mt-4">
 			@include('alerts')
 		</div>
 		<div class="row justify-content-center py-5">
-			<div class="col-md-8">
+			<div class="col-md-6">
 				<div class="card">
-					<div class="card-header">Register</div>
+					<div class="card-header text-center">Registre</div>
 
 					<div class="card-body">
 						<form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -82,14 +108,24 @@
 							<div class="form-group row mb-0">
 								<div class="col-md-6 offset-md-4">
 									<button type="submit" class="btn btn-primary">
-										Register
+										Registre
 									</button>
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
-@endsection
+
+            </div>
+       
+
+    </div>
+
+</body>
+</html>
+
+	
