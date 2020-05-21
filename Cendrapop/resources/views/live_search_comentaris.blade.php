@@ -25,6 +25,7 @@
          <th>USER ID</th>
          <th>PRODUCT ID</th>
          <th>CONTINGUT</th>
+         <th>ACCIONS</th>
         </tr>
        </thead>
        <tbody>

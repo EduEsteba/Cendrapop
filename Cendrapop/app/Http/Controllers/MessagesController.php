@@ -12,6 +12,17 @@ class MessagesController extends Controller {
 
 	}
 
+	public function destroy($id)
+{
+  $missatge=Message::findOrFail($id);
+
+  if ($missatge->delete()) {
+      return redirect("/live_search_comentaris");
+  }
+
+  return 'Algo ha sortir malament';
+}
+
 	public function store(Request $request) {
 		$data      = request()->input();
 		$validator = validator()->make(
