@@ -3,6 +3,7 @@
 
 @section('content')
   <div class="container box">
+  <br>
    <h3 align="center">Llista d'usuaris</h3><br />
    <div class="panel panel-default">
     <div class="panel-heading">Introdueix el nom d'usuari:</div>
@@ -12,8 +13,8 @@
      </div>
      <div class="table-responsive">
       <h3 align="center">Usuaris totals : <span id="total_records"></span></h3>
-      <a class="btn btn-primary" href="{{ route('json') }}">JSON</a>
-      <a class="btn btn-primary" href="{{ route('usuaris.xml') }}">XML</a>
+      <a class="btn btn-primary" href="{{ route('json') }}"><i class="fas fa-download"></i> JSON</a>
+      <a class="btn btn-primary" href="{{ route('usuaris.xml') }}"><i class="fas fa-download"></i> XML</a>
       <br>
       <br>
 
@@ -25,8 +26,6 @@
          <th>Nom</th>
          <th>E-Mail</th>
          <th>Rol</th>
-         <th>Editar</th>
-         <th>Eliminar</th>
         </tr>
        </thead>
        <tbody>

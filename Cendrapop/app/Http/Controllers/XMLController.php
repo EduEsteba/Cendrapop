@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\User;
+use App\Product;
 
 class XMLController extends Controller 
 {
@@ -24,6 +25,40 @@ class XMLController extends Controller
                 $xml->writeElement('email', $user->email);
                 $xml->writeElement('role', $user->role);
                 $xml->writeElement('password', $user->password);
+                $xml->endElement();
+            }
+
+        $xml->endElement();
+	    $xml->endDocument();
+	    $filename = now()->format('Y-m-d-H-i-s');
+        header("Content-Type: text/html/force-download");
+        header("Content-Disposition: attachment; filename=".$filename.".xml");
+
+
+    $content = $xml->outputMemory();
+	$xml = null;
+
+    return response($content)->header('Content-Type', 'text/xml');
+    }
+
+
+
+    public function download_products(){
+        $products = Product::all();
+	    $xml = new \XMLWriter();
+        $xml->openMemory();
+        $xml->startDocument();
+        $xml->startElement('Productes');
+            foreach($products as $product) {
+                $xml->startElement('Producte');
+                $xml->writeElement('id', $product->id);
+                $xml->writeElement('created_at', $product->created_at);        
+                $xml->writeElement('deleted_at', $product->deleted_at);
+                $xml->writeElement('title', $product->title);
+                $xml->writeElement('description', $product->description);
+                $xml->writeElement('price', $product->price);
+                $xml->writeElement('user_id', $product->user_id);
+                $xml->writeElement('category_id', $product->category_id);
                 $xml->endElement();
             }
 

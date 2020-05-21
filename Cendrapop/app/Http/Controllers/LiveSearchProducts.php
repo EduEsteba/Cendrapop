@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class LiveSearchProducts extends Controller
 {
     function index()
@@ -44,9 +44,6 @@ class LiveSearchProducts extends Controller
          <td>'.$row->description.'</td>
          <td>'.$row->price.'</td>
        
-         <td>
-              <a class="btn btn-info" href="profile/drop/'.$row->id.'">Eliminar</a>
-         </td>
 
         ';
        }

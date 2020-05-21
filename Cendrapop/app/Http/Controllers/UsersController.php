@@ -103,5 +103,12 @@ class UsersController extends Controller {
 		return redirect(route('home'));
 	}
 
+	public function destroyadmin($id) {
+		$user       = User::find($id);
+		$user->delete();
+
+		return redirect(route('home'));
+	}
+
 
 }

@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile/edit/{id}', 'UsersController@edit')->name('profile.edit');
 	Route::post('profile/{id}/update', 'UsersController@update')->name('profile.update');	
 	Route::get('/profile/drop/{id}', 'UsersController@destroy')->name('profile.drop');
+	Route::get('/profile/dropadmin/{id}', 'UsersController@destroyadmin')->name('profile.dropadmin');
 });
 
 //Productes
@@ -62,7 +63,7 @@ Route::group(['middleware' => 'admin'], function () {
 	//JSON
 	Route::get('/live_search_products/json', 'JsonGenerateController@json')->name('products_json');
 	//XML
-	Route::get('/products/xml','XMLController@download')->name('products_xml');
+	Route::get('/products/xml','XMLController@download_products')->name('products_xml');
 });
 
 //Imatges
