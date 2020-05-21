@@ -14,7 +14,7 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'ProductsController@index')->name('home');
 Route::get('/shop', 'ProductsController@index')->name('shop');
 
 //Usuaris
