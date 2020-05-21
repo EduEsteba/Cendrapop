@@ -105,14 +105,20 @@
 								</div>
 							</div>
 
+							<a class="col-md-12 text-md-center">Al fer clic en Registre acceptes els nostres <a href="/condiciones">Terminis i Condicions</a></a>
+							<br>
+							<br>
 							<div class="form-group row mb-0">
-								<div class="col-md-6 offset-md-4">
+								<div class="col-md-6 offset-md-5">
 									<button type="submit" class="btn btn-primary">
 										Registre
 									</button>
 								</div>
 							</div>
 						</form>
+
+
+						
 					</div>
 				</div>
 

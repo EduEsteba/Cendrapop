@@ -20,6 +20,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/', 'ProductsController@index')->name('home');
 });
 
+Route::get('/condiciones','Condiciones@index')->name('condiciones');
+
 
 
 //Usuaris
