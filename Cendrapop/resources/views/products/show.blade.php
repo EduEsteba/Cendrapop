@@ -27,7 +27,7 @@
 						<h1 class="product-title my-4">{{ $product->title }}</h1>
 						<p class="product-owner">{{ __('Venut per') }} {{ $product->user->name}}</p>
 						<p class="comment-links d-inline-block mb-4">
-							<a href="#comments"><span class="far fa-comment"></span> {{ __('Llegir comentaris') }} ({{ count($messages) }}) </a>
+							<a href="#comments"><span class="far fa-comment"></span> {{ __('Comentaris') }} ({{ count($messages) }}) </a>
 							<a href="#comments"><span class="fas fa-pencil-alt"></span>{{ __('Esciure un missatge') }}</a>
 						</p>
 						<p class="product-price mb-4">{{ $product->price }}€</p>
@@ -44,10 +44,10 @@
 						<div class="card-body">
 							@if ( count($messages) > 0)
 								@foreach($messages as $message)
-									<div class="comment-wrapper mb-4 @if($product->user->username === $message->username) owner @endif">
+									<div class="comment-wrapper mb-4">
 										<div class="comment-content">
-											<div class="comment-author"><p>{{ $message->username }}</p></div>
-											<p>{{ __('Comentat el') }} {{ $message->created_at->format('d M Y') }}</p>
+											<div class="comment-author"><p>{{ $message->user->name }}  {{ $message->created_at->format('d M Y') }}</p></div>
+											
 											<p>{{ $message->content }}</p>
 										</div>
 										<hr>
@@ -59,27 +59,25 @@
 								</div>
 								<hr>
 							@endif
-							<div class="comment-form-wrapper fix">
-								<h3 class="form-title">{{ __('Enviar un missatge') }}</h3>
+							<div class="form-group">
 								@guest
-									<p>{{ __('Necesites estar logejat per poder comentar') }}</p>
+									<p>Necesites estar logejat per poder comentar</p>
 									<a class="btn btn-primary" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">{{ __('Login') }}</a>
 									<a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
 								@else
 									<form method="post" action="{{ url('/message/add') }}">
 										@csrf
-										<div class="comment-form row">
+										<div class="comment-form " rows="3">
 											<div class="d-none" aria-hidden="true">
 												<input name="product_id" id="product_id" value="{{ $product->id }}">
 											</div>
-											<div class="col-12 mb-4">
-												<label for="message">{{ __('El teu missatge:') }}</label>
-												<textarea name="content" id="content" placeholder="Message" required></textarea>
+											<div class="">
+												<textarea class="form-control" name="content" id="content" placeholder="Comentari" required ></textarea>
 											</div>
 											<div class="md-form">
-
-											<div class="col-12">
-												<button class="btn btn-success" type="submit">{{ __('Enviar missatge:') }}</button>
+											<br>
+											<div class="">
+												<button class="btn btn-success" type="submit">Enviar comentari</button>
 											</div>
 										</div>
 									</form>

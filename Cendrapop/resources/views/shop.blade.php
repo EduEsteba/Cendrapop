@@ -54,11 +54,11 @@
 							</div>
 						@else
 							@foreach($products as $product)
-								<div class="col-sm-6 col-md-4">
+								<div class="col-sm-6 col-md-3">
 									<div class="feature-product">
 										<div class="image">
 											<a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">
-												<img src="/uploads/products/{{ $product->images->first()->file_name }}" class="img-fluid" alt="">
+												<img src="/uploads/products/{{ $product->images->first()->file_name }}" class="img-fluid" alt="" style="width: 100%; height: 100%;">
 											</a>
 										</div>
 										<div class="content">
