@@ -48,7 +48,6 @@ class UsersController extends Controller {
 			$data, [
 				     'name'     => ['required', 'string', 'max:255'],
 					 'email'    => ['required', 'string', 'email', 'max:255'],				     
-				     'password' => ['required', 'string', 'min:6', 'confirmed'],
 					 'photo'    => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
 
 				 ]
@@ -61,7 +60,6 @@ class UsersController extends Controller {
 			$user           = Auth::user();
 			$user->name     = $request->get('name');
 			$user->email    = $request->get('email');
-			$user->password    = $request->get('password');
 
 		
 
@@ -85,7 +83,7 @@ class UsersController extends Controller {
 
 			
 
-		return back()->withErrors($validator->errors())->withInput()->with('error', 'ERROR!');
+		return back()->withErrors($validator->errors())->withInput()->with('success', 'Perfil actualitzat!');
 
 
 	}

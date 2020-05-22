@@ -77,12 +77,12 @@
 					<div class="form-group row justify-content-center mb-0">
 						<div class="col-md-3">
 							<button type="submit" class="btn btn-success btn-block">
-								Guardar
+							<i class="fas fa-check"></i> Guardar
 							</button>
 						</div>
 						<div class="col-md-3">
 							<a href="{{ route('profile.show') }}" class="btn btn-warning btn-block">
-								Cancelar
+							<i class="fas fa-times"></i> Cancelar
 							</a>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<div class="row justify-content-center">
-			<a class="btn btn-danger" onclick='return confirm("Estas segur que el vols eliminar?")' href="{{ route('profile.drop', $user->id) }}">Eliminar perfil</a>
+			<a class="btn btn-danger" onclick='return confirm("Estas segur que el vols eliminar?")' href="{{ route('profile.drop', $user->id) }}"><i class="fas fa-trash"></i> Eliminar perfil</a>
 		</div>
 	</div>
 @endsection

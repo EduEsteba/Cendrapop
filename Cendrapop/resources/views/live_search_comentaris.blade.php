@@ -21,11 +21,11 @@
       <table class="table table-striped table-bordered" style="text-align: center">
        <thead>
         <tr>
-         <th>ID</th>
-         <th>USER ID</th>
-         <th>PRODUCT ID</th>
-         <th>CONTINGUT</th>
-         <th>ACCIONS</th>
+         <th>Id</th>
+         <th>User Id</th>
+         <th>Product Id</th>
+         <th>Contingut</th>
+         <th>Accions</th>
         </tr>
        </thead>
        <tbody>

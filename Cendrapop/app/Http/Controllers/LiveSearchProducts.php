@@ -11,8 +11,7 @@ class LiveSearchProducts extends Controller
      return view('live_search_products');
     }
 
-    function action(Request $request)
-    {
+    function action(Request $request){
      if($request->ajax())
      {
       $output = '';
@@ -43,8 +42,6 @@ class LiveSearchProducts extends Controller
          <td>'.$row->title.'</td>
          <td>'.$row->description.'</td>
          <td>'.$row->price.'</td>
-       
-
         ';
        }
       }
