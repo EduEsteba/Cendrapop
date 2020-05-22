@@ -11,7 +11,7 @@ class LiveSearchProducts extends Controller
      return view('live_search_products');
     }
 
-    function action(Request $request){
+    function actionproducts(Request $request){
      if($request->ajax())
      {
       $output = '';

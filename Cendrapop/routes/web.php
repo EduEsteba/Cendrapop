@@ -66,7 +66,7 @@ Route::group(['middleware' => 'admin'], function () {
 //Control de productes
 Route::group(['middleware' => 'admin'], function () {
 	Route::get('/live_search_products', 'LiveSearchProducts@index')->name('live_search_products');
-	Route::get('/live_search_products/action', 'LiveSearchProducts@action')->name('live_search_products.action');
+	Route::get('/live_search_products/action', 'LiveSearchProducts@actionproducts')->name('live_search_products.action');
 	//JSON
 	Route::get('/live_search_products/json', 'JsonGenerateController@jsonProducts')->name('products_json');
 	//XML

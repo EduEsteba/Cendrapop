@@ -6,7 +6,7 @@
 		<div class="alert mt-4">
 			@include('alerts')
 		</div>
-		<div class="row justify-content-center py-5">
+		<div class="row justify-content-center py-5 text-center">
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">{{ __('Nou producte') }}</div>
@@ -95,8 +95,8 @@
 							</div>
 							<div class="form-group row mb-0">
 								<div class="col-md-6 offset-md-4">
-									<button type="submit" class="btn btn-primary">
-										Enviar
+									<button type="submit" class="btn btn-success">
+									<i class="fas fa-share"></i> Enviar
 									</button>
 								</div>
 							</div>

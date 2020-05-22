@@ -19,7 +19,7 @@
         
   <div class="list-group list-group-flush">
     <a href="{{ route('profile.show') }}" class="list-group-item list-group-item-action bg-light"><i class="far fa-user"></i> Perfil</a>
-    <a href="{{ route('products.add') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-plus"></i> Nou Producte</a>
+    <a href="{{ route('products.new') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-plus"></i> Nou Producte</a>
     
     @if ( Auth::user()->role == 'admin' )
   <a class="list-group-item list-group-item-action bg-light" href="{{ route('categories.show') }}"><i class="far fa-edit"></i> Editar categories</a>

@@ -45,7 +45,7 @@ $(document).ready(function(){
  function fetch_customer_data(query = '')
  {
   $.ajax({
-   url:"{{ route('live_search_products.action') }}",
+   url:"{{ route('live_search_products.actionproducts') }}",
    method:'GET',
    data:{query:query},
    dataType:'json',

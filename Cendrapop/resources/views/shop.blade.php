@@ -7,12 +7,11 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="sidebar-container shop-sidebar-container">
+					<br>
 						<div class="single-sidebar-widget mb-3">
 							<h3 class="sidebar-title d-none d-lg-block">{{ __('Categories') }}</h3>
 							<nav class="navbar-expand-lg">
-								<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categories-menu" aria-controls="categories-menu" aria-expanded="false" aria-label="Toggle Categories">
-									<span class="lnr lnr-menu"></span>View Categories
-								</a>
+								
 								<nav class="category-menu collapse navbar-collapse" id="categories-menu">
 									<ul class="category-list">
 										<li><a href="{{ route('shop') }}">{{ __('Totes') }}</a></li>
