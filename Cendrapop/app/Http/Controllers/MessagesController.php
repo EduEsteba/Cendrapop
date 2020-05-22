@@ -44,6 +44,6 @@ class MessagesController extends Controller {
 			return back()->with('success', 'Message Saved Successfully!');
 		}
 
-		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problem Submitting Message!');
+		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problema al comentar!');
 	}
 }

@@ -45,7 +45,7 @@ class LiveSearchComentaris extends Controller
          <td>'.$row->user_id.'</td>
          <td>'.$row->product_id.'</td>
          <td>'.$row->content.'</td>
-         <td><a href="/delete/'.$row->id.'">Eliminar</a></td>
+         <td><a href="/delete/'.$row->id.' "class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a></td>
        
 
         ';

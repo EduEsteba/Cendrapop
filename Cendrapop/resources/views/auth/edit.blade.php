@@ -2,8 +2,8 @@
 @extends('layouts.sidebar')
 
 @section('content')
-
-	<div class="container">
+<div class="container">
+	<div class="col-sm-12 col-md-12 col-lg-12">
 		<div class="row">
 			<div class="col-12">
 				@include('alerts')
@@ -11,6 +11,9 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-12 card-body center">
+			<h1 class="text-center">Editar Perfil</h1>
+			<br>
+			<br>
 				<form method="POST" action="{{ route('profile.update', $user) }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-group row">
@@ -88,6 +91,7 @@
 					</div>
 				</form>
 			</div>
+		</div>
 		</div>
 		<div class="row justify-content-center">
 			<a class="btn btn-danger" onclick='return confirm("Estas segur que el vols eliminar?")' href="{{ route('profile.drop', $user->id) }}"><i class="fas fa-trash"></i> Eliminar perfil</a>

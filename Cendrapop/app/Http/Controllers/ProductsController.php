@@ -99,10 +99,10 @@ class ProductsController extends Controller {
 				}
 			}
 
-			return back()->with('success', 'Product created successfully!');
+			return back()->with('success', 'Producte creat correctament!');
 		}
 
-		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problem creating product!');
+		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problema creant el producte!');
 	}
 
 	/**

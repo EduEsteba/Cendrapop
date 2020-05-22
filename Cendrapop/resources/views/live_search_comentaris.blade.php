@@ -12,7 +12,7 @@
       <input type="text" name="searchproducte" id="searchproducte" class="form-control" placeholder="Comentari" />
      </div>
      <div class="table-responsive">
-      <h3 align="center">Productes totals : <span id="total_records"></span></h3>
+      <h3 align="center">Comentaris totals : <span id="total_records"></span></h3>
       <a class="btn btn-primary" href="{{ route('comentaris_json') }}"><i class="fas fa-download"></i> JSON</a>
       <a class="btn btn-primary" href="{{ route('comentarisapi') }}"><i class="fas fa-info-circle"></i> API JSON</a>
       <a class="btn btn-primary" href="{{ route('comentaris_xml') }}"><i class="fas fa-download"></i> XML</a>
