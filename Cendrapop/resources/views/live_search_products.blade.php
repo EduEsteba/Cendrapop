@@ -14,7 +14,7 @@
      <div class="table-responsive">
       <h3 align="center">Productes totals : <span id="total_records"></span></h3>
       <a class="btn btn-primary" href="{{ route('products_json') }}"><i class="fas fa-download"></i> JSON</a>
-      <a class="btn btn-primary" href="{{ route('productsapi') }}"><i class="fas fa-info-circle"></i> API JSON</a>
+      <a class="btn btn-primary" href="{{ route('products') }}"><i class="fas fa-info-circle"></i> API JSON</a>
       <a class="btn btn-primary" href="{{ route('products_xml') }}"><i class="fas fa-download"></i> XML</a>
       <br>
       <br>
@@ -45,7 +45,7 @@ $(document).ready(function(){
  function fetch_customer_data(query = '')
  {
   $.ajax({
-   url:"{{ route('live_search_products.actionproducts') }}",
+   url:"{{ route('live_search_products.action') }}",
    method:'GET',
    data:{query:query},
    dataType:'json',
