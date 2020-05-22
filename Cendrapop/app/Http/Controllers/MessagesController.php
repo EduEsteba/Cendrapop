@@ -12,8 +12,7 @@ class MessagesController extends Controller {
 
 	}
 
-	public function destroy($id)
-{
+	public function destroy($id){
   $missatge=Message::findOrFail($id);
 
   if ($missatge->delete()) {

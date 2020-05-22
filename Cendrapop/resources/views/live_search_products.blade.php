@@ -14,7 +14,7 @@
      <div class="table-responsive">
       <h3 align="center">Productes totals : <span id="total_records"></span></h3>
       <a class="btn btn-primary" href="{{ route('products_json') }}"><i class="fas fa-download"></i> JSON</a>
-      <a class="btn btn-primary" href="{{ route('products') }}"><i class="fas fa-info-circle"></i> API JSON</a>
+      <a class="btn btn-primary" href="{{ route('productsapi') }}"><i class="fas fa-info-circle"></i> API JSON</a>
       <a class="btn btn-primary" href="{{ route('products_xml') }}"><i class="fas fa-download"></i> XML</a>
       <br>
       <br>
@@ -25,6 +25,9 @@
          <th>Títol</th>
          <th>Descripció</th>
          <th>Preu</th>
+         <th>Eliminat</th>
+         <!--<th>Accions</th>-->
+
         </tr>
        </thead>
        <tbody>

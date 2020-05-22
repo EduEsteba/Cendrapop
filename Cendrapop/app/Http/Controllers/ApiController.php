@@ -14,7 +14,7 @@ class ApiController extends Controller
     }
 
     public function indexProducts(){
-        return response()->json(Message::all());
+        return response()->json(Product::all());
     }
 
     public function indexComentaris(){
