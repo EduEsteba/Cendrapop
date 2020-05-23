@@ -11,7 +11,7 @@
 			<h2>{{ __('Categories') }}</h2>
 		</div>
 		<div class="text-right">
-			<a href="{{ route('categories.new') }}" class="btn btn-success mb-3"><i class="fas fa-plus"></i> Nova Categoria</a>
+			<a href="{{ route('categories.new') }}" class="btn btn-success mb-3" id="novacategoria2"><i class="fas fa-plus"></i> Nova Categoria</a>
 		</div>
 		<table class="table">
 			<thead class="thead-dark">
