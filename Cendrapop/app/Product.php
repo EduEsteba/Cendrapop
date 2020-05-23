@@ -9,8 +9,7 @@ use App\User;
 use App\Message;
 use App\ProductsImage;
 
-class Product extends Model
-{
+class Product extends Model{
 
     protected $table = 'products';
     public $timestamps = true;
@@ -24,23 +23,19 @@ class Product extends Model
 	];
 
 
-	public function images()
-    {
+	public function images(){
         return $this->hasMany('App\ProductsImage');
     }
 
-    public function messages()
-    {
+    public function messages(){
         return $this->hasMany('App\Message');
     }
 
-    public function user()
-    {
+    public function user(){
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function category()
-    {
+    public function category(){
         return $this->belongsTo('App\Category', 'category_id');
     }
 

@@ -5,8 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 
-class Message extends Model
-{
+class Message extends Model{
 
     protected $table = 'messages';
     public $timestamps = true;
@@ -16,13 +15,11 @@ class Message extends Model
 	];
 
 
-	public function user()
-    {
+	public function user(){
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function product()
-    {
+    public function product(){
         return $this->belongsTo('App\Product', 'product_id');
     }
 

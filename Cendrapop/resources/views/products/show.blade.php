@@ -12,7 +12,7 @@
 						@if ( count($product->images) > 0)
 							<div class="image-thumbs row">
 								@foreach ($product->images as $image)
-										<img class="border" src="/uploads/products/{{ $image->file_name }}" class="img-thumbnail">
+										<img class="border zoom  " src="/uploads/products/{{ $image->file_name }}" id="logo" class="img-thumbnail">
 									
 								@endforeach
 							</div>

@@ -8,19 +8,17 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller {
 
-	public function index() {
-
-	}
-
+	
+	//Funcio per eliminar missatges visualitzats en la taula de AYAX
 	public function destroy($id){
-  $missatge=Message::findOrFail($id);
+  		$missatge=Message::findOrFail($id);
 
-  if ($missatge->delete()) {
-      return redirect("/live_search_comentaris");
-  }
+  		if ($missatge->delete()) {
+      		return redirect("/live_search_comentaris");
+  		}
 
-  return 'Algo ha sortir malament';
-}
+  		return 'Algo ha sortir malament';
+	}
 
 	public function store(Request $request) {
 		$data      = request()->input();
@@ -40,7 +38,7 @@ class MessagesController extends Controller {
 			);
 			$message->save();
 
-			return back()->with('success', 'Message Saved Successfully!');
+			return back()->with('success', 'Comentari creat correctament!');
 		}
 
 		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problema al comentar!');

@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use DB;
 class LiveSearchProducts extends Controller
 {
-    function index()
-    {
+    //Funcio per tornar la vista
+    function index(){
      return view('live_search_products');
     }
 
+
+    //Funcio AYAX per buscar ho que fico a l'input, imprimeixo la taula des d'alla
     function actionproducts(Request $request){
      if($request->ajax())
      {

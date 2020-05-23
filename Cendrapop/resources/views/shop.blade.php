@@ -2,6 +2,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
+
 	<div class="page-content-wrapper">
 		<div class="container">
 			<div class="row">
@@ -43,7 +44,7 @@
 						</div>
 					</div>
 
-					<div class="row shop-product-wrap py-5">
+					<div class="row  py-5">
 						@if ($products->count() == 0)
 							<div class="col-12">
 								@guest
@@ -54,32 +55,28 @@
 							</div>
 						@else
 							@foreach($products as $product)
-								<div class="col-sm-6 col-md-3">
-									<div class="feature-product">
-										<div class="image">
+								<div class="col-sm-2 col-md-3 py-5">
+											<div style="height: 100%;">
 											<a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">
-												<img src="/uploads/products/{{ $product->images->first()->file_name }}" class="img-fluid" alt="" style="width: 100%; height: 100%;">
+												<img src="/uploads/products/{{ $product->images->first()->file_name }}" class="img-fluid" alt="" style="max-height:100%;max-width: 100%;">
 											</a>
-										</div>
-										<div class="content">
-											<p class="product-title"><a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">{{ $product->title }}</a></p>
-											<p class="price">{{ $product->price }}€</p>
-										</div>
-									</div>
+											<div>
+											<p class="text-center"><a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">{{ $product->title }}</a></p>
+											<p class="text-center">{{ $product->price }}€</p>
+											</div>
+ 											</div>
+											
+											
+										
 								</div>
 							@endforeach
 						@endif
 					</div>
-					<div class="row">
-						<div class="d-block m-auto">
-							<div class="pagination-content">
-								{{ $products->links() }}
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 @endsection

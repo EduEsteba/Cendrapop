@@ -7,8 +7,9 @@ use App\User;
 use App\Product;
 use App\Message;
 
-class ApiController extends Controller
-{
+class ApiController extends Controller{
+
+    //Funcions que faig servir per obtenir les dades JSON
     public function indexUsers(){
         return response()->json(User::all());
     }

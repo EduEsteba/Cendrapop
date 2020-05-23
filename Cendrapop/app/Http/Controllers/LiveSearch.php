@@ -8,13 +8,13 @@ use UsersController;
 
 class LiveSearch extends Controller
 {
-    function index()
-    {
+    //Funcio per tornar la vista
+    function index(){
      return view('live_search');
     }
 
-    function action(Request $request)
-    {
+    //Funcio AYAX per buscar ho que fico a l'input, imprimeixo la taula des d'alla
+    function action(Request $request){
      if($request->ajax())
      {
       $output = '';

@@ -24,6 +24,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    //Funcio per retornar la vista amb productes i categories
     public function index()
     {
         $categories = Category::with('products')->orderBy('title', 'asc')->get();

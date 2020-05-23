@@ -90,6 +90,8 @@ class CategoriesController extends Controller {
 	 *
 	 * @return \Illuminate\Http\RedirectResponse
 	 */
+
+	 //Funcio per editar les categories
 	public function update(Request $request, $id) {
 
 		$data      = request()->input();

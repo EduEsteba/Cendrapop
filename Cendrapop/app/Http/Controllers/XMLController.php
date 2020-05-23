@@ -8,8 +8,10 @@ use App\User;
 use App\Product;
 use App\Message;
 
-class XMLController extends Controller 
-{
+class XMLController extends Controller {
+
+    //3 Funcions per poder treure dades xml de les tres taules que mostro
+
     	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */

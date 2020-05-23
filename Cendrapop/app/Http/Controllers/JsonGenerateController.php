@@ -7,8 +7,10 @@ use App\Product;
 use App\Message;
 use Illuminate\Http\Request;
 
-class JsonGenerateController extends Controller
-{
+class JsonGenerateController extends Controller{
+
+    //3 Funcions per mostrar 3 taules en format json
+
     public function json(){
         $posts = User::orderBy('id')->get();
 
@@ -32,6 +34,7 @@ class JsonGenerateController extends Controller
             ];
         }
         $filename = now()->format('Y-m-d-H-i-s');
+        //"Forço" a que es descarregui
         header("Content-Type: text/html/force-download");
         header("Content-Disposition: attachment; filename=".$filename.".json");
         return $data;
