@@ -197,7 +197,7 @@ class ProductsController extends Controller {
 			return redirect(route('profile.show'))->with('success', 'Product Updated successfully!');
 		}
 
-		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problem Updading product!');
+		return redirect()->back()->withErrors($validator->errors())->withInput()->with('error', 'Problema al crear el producte!');
 	}
 
 	/**
@@ -216,7 +216,7 @@ class ProductsController extends Controller {
 
 		$product->delete();
 
-		return back()->with('success', 'Product Deleted!');
+		return back()->with('success', 'Producte eliminat correctament!');
 	}
 
 }

@@ -2,28 +2,24 @@
 @extends('layouts.sidebar')
 
 @section('content')
-	<div class="single-product-page-content pb-5">
 		<div class="container">
 			<div class="alert">
 				@include('alerts')
 			</div>
-			<div class="row product-details mb-5">
-				<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-5 col-lg-5 col-sm-5">
 					<div class="product-images">
-						
 						@if ( count($product->images) > 0)
 							<div class="image-thumbs row">
 								@foreach ($product->images as $image)
-									<div class="col-3">
-										<img class="border" src="/uploads/products/{{ $image->file_name }}">
-									</div>
+										<img class="border" src="/uploads/products/{{ $image->file_name }}" class="img-thumbnail">
+									
 								@endforeach
 							</div>
 						@endif
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="single-product-details-container">
+				<div class="col-md-5">
 						<h1 class="product-title my-4">{{ $product->title }}</h1>
 						<p class="product-owner">{{ __('Venut per') }} {{ $product->user->name}}</p>
 						<p class="comment-links d-inline-block mb-4">
@@ -34,9 +30,10 @@
 						<p class="product-description mb-15">{{ $product->description }}</p>
 						<hr>
 						<p>Producte creat el {{ $product->created_at->format('d M Y') }}</p>
-					</div>
+					
 				</div>
 			</div>
+			<br>
 			<div id="comments" class="row comments">
 				<div class="col-12">
 					<div class="card">
@@ -88,6 +85,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 @endsection

@@ -5,40 +5,32 @@
 <div class="page-content-wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg">
+			<div class="col-lg-12 col-md-12 col-sm-12">
 				<div class="alert">
 					@include('alerts')
 					<h1 class="text-center">El meu compte</h1>
 				</div>
-			</div>
-		</div>
-		<div class="row border justify-content-center align-content-center py-4 mx-1 mx-md-0">
-			<div class="col-6 col-md-4 col-lg-3 text-center mb-3 mb-md-0">
-				<div class="profile-header-img">
+				<div class=" col-lg-12 col-md-12 col-sm-12 text-center">
 					<img class="rounded" src="/uploads/users/{{ $user->photo }}" />
-				</div>
-			</div>
-			<div class="col-10 text-center text-md-left col-md-7 col-lg-6 offset-md-1 offset-lg-2 align-self-center">
-				<div class="row py-2">
-					<div class="col-md-4"><strong>Nom</strong></div>
-					<div class="col-md-6">{{ $user->name }}</div>
-				</div>
-				<div class="row py-2">
-					<div class="col-md-4"><strong>E-mail</strong></div>
-					<div class="col-md-6">{{ $user->email }}</div>
-				</div>
-
-				<div class="row my-3">
-					<div class="col-md-6 offset-md-4">
-						<a href="{{ route('profile.edit', $user->id) }}" class="btn btn-primary">
+					<br>
+					<br>
+					<strong>Nom: </strong>{{ $user->name }}
+					<br>
+					<strong>E-mail: </strong>{{ $user->email }}
+					<br>
+					<br>
+					<a href="{{ route('profile.edit', $user->id) }}" class="btn btn-primary">
 						<i class="far fa-edit"></i> Editar Perfil
 						</a>
 					</div>
-				</div>
 				
 			</div>
+			</div>
+			
 		</div>
+		
 		<br>
+		<hr>
 		<div class="row">
 			<div class="col-12 col-sm-6 text-center text-sm-left mb-4 ">
 				<h2 id="products text-center">Els meus productes</h2>
