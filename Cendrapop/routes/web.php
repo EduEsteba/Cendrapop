@@ -18,6 +18,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/home', 'ProductsController@index')->name('home');
 	Route::get('/shop', 'ProductsController@index')->name('shop');
 	Route::get('/', 'ProductsController@index')->name('home');
+	//EMAIL
+	Route::get('/sendemail', 'SendEmailController@index')->name('sendemail');
+	Route::post('/sendemail/send', 'SendEmailController@send');
 	
 });
 
