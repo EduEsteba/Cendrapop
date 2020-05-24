@@ -24,7 +24,7 @@ import javax.persistence.criteria.Root;
 public class MigrationsJpaController implements Serializable {
 
     public MigrationsJpaController() {
-               this.emf = Persistence.createEntityManagerFactory("CendraPopPU");
+               this.emf = Persistence.createEntityManagerFactory("Persistencia");
 
     }
     private EntityManagerFactory emf = null;

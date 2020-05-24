@@ -3,7 +3,6 @@
   <persistence-unit name="Persistencia" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Entidades.Users</class>
-    <class>Entidades.Media</class>
     <class>Entidades.Products</class>
     <class>Entidades.Migrations</class>
     <class>Entidades.Categories</class>

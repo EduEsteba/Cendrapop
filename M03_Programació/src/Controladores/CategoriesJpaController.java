@@ -27,7 +27,7 @@ import javax.persistence.Persistence;
 public class CategoriesJpaController implements Serializable {
 
     public CategoriesJpaController() {
-               this.emf = Persistence.createEntityManagerFactory("CendraPopPU");
+               this.emf = Persistence.createEntityManagerFactory("Persistencia");
 
     }
     private EntityManagerFactory emf = null;

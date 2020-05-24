@@ -71,10 +71,10 @@ class UsersController extends Controller {
 			}
 			$user->save();
 		
-			return redirect(route('profile.show'))->with('success', 'Details Updated successfully!');
+			return redirect(route('profile.show'))->with('success', 'Perfil actualitat correctament!');
 			}
 
-		return back()->withErrors($validator->errors())->withInput()->with('error', 'Problem Updating Profile!');
+		return back()->withErrors($validator->errors())->withInput()->with('error', 'Error al actualizar el perfil!');
 	}
 
 	

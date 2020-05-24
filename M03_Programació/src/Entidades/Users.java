@@ -38,7 +38,6 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email")
     , @NamedQuery(name = "Users.findByPhoto", query = "SELECT u FROM Users u WHERE u.photo = :photo")
     , @NamedQuery(name = "Users.findByRole", query = "SELECT u FROM Users u WHERE u.role = :role")
-    , @NamedQuery(name = "Users.findByEmailVerifiedAt", query = "SELECT u FROM Users u WHERE u.emailVerifiedAt = :emailVerifiedAt")
     , @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")
     , @NamedQuery(name = "Users.findByRememberToken", query = "SELECT u FROM Users u WHERE u.rememberToken = :rememberToken")
     , @NamedQuery(name = "Users.findByCreatedAt", query = "SELECT u FROM Users u WHERE u.createdAt = :createdAt")
@@ -63,10 +62,7 @@ public class Users implements Serializable {
     @Basic(optional = false)
     @Column(name = "role")
     private String role;
-    @Column(name = "email_verified_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date emailVerifiedAt;
-    @Basic(optional = false)
+    
     @Column(name = "password")
     private String password;
     @Column(name = "remember_token")
@@ -138,13 +134,7 @@ public class Users implements Serializable {
         this.role = role;
     }
 
-    public Date getEmailVerifiedAt() {
-        return emailVerifiedAt;
-    }
-
-    public void setEmailVerifiedAt(Date emailVerifiedAt) {
-        this.emailVerifiedAt = emailVerifiedAt;
-    }
+   
 
     public String getPassword() {
         return password;
