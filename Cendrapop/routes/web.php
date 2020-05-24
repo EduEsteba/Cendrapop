@@ -63,7 +63,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
 	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
 	Route::get('/deleteuser/{id}', 'UsersController@destroy')->name('userdeleteadmin');
-
 		//Usuris JSON
 		Route::get('/live_search/json', 'JsonGenerateController@json')->name('json');
 		//Usuaris XML
@@ -72,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
 	//Control de productes
 	Route::get('/live_search_products', 'LiveSearchProducts@index')->name('live_search_products');
 	Route::get('/live_search_products/action', 'LiveSearchProducts@actionproducts')->name('live_search_products.action');
-	Route::get('/deleteproducts/{id}', 'ProductsController@deleteproducts')->name('products.delete');
+	Route::get('/deleteproducts/{id}', 'ProductsController@destroy')->name('products.delete');
 		//Productes JSON
 		Route::get('/live_search_products/json', 'JsonGenerateController@jsonProducts')->name('products_json');
 		//Productes XML

@@ -45,9 +45,7 @@ class LiveSearchProducts extends Controller
          <td>'.$row->description.'</td>
          <td>'.$row->price.'</td>
          <td>'.$row->deleted_at.'</td>
-
-         <!--<td><a href="/deleteproducts/'.$row->id.' "class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a></td>-->
-
+         <td><a href="/deleteproducts/'.$row->id.' "class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a></td>
         ';
        }
       }

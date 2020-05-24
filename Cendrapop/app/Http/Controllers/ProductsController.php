@@ -40,24 +40,7 @@ class ProductsController extends Controller {
 		return view('shop', compact('products', 'categories'));
 	}
 
-	/*public function deleteproducts($id){
-		$products=Product::findOrFail($id);
-
-		$images  = $product->images()->get();
-
-		foreach ($images as $image) {
-			$image_path = public_path() . '/uploads/products/' . $image->file_name;
-			File::delete($image_path);
-		}
-	  
-		if ($products->delete()) {
-			return redirect("/live_search_products");
-		}
-	  
-		return 'Algo ha sortir malament';
-	  }*/
-
-
+	
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */

@@ -25,9 +25,8 @@
          <th>Títol</th>
          <th>Descripció</th>
          <th>Preu</th>
-         <th>Eliminat</th>
-         <!--<th>Accions</th>-->
-
+         <th>Data Eliminació</th>
+         <th>Accions</th>
         </tr>
        </thead>
        <tbody>
