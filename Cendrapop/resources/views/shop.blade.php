@@ -44,7 +44,7 @@
 						</div>
 					</div>
 
-					<div class="row  py-5">
+					<div class="row">
 						@if ($products->count() == 0)
 							<div class="col-12">
 								@guest
@@ -57,14 +57,19 @@
 							@foreach($products as $product)
 							<div class="card col-sm-12 col-md-3 py-5 text-center" style="width: 100%;height: 100%;border: none;margin:auto; background-color: transparent">
   								<a href="{{ url('products/show') }}/{{ $product->id }}"><img class="card-img-top" src="/uploads/products/{{ $product->images->first()->file_name }}"  alt="Card image cap"></a>
-    								<a class="card-title" href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">{{ $product->title }}</a>
+    								<a class="card-title" href="{{ url('products/show') }}/{{ $product->id }}">{{ $product->title }}</a>
     								<p class="card-text">{{ $product->price }}€</p>
 							</div>
 
 
 							@endforeach
 						@endif
+
 					</div>
+					<div class="pagination justify-content-center" style="text-align: center;">{!!$products->render()!!}</div>
+
+					
+
 					
 				</div>
 			</div>
