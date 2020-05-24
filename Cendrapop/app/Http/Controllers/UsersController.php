@@ -34,6 +34,7 @@ class UsersController extends Controller {
 		return view('auth.edit', compact('user'));
 	}
 
+
 	/**
 	 * @param \Illuminate\Http\Request $request
 	 * @param                          $id
@@ -60,10 +61,6 @@ class UsersController extends Controller {
 			$user           = Auth::user();
 			$user->name     = $request->get('name');
 			$user->email    = $request->get('email');
-
-		
-
-
 
 			if ($request->hasFile('photo')) {
 				$photo    = $request->file('photo');

@@ -162,7 +162,7 @@ class ProductsController extends Controller {
 			$data, [
 				     'title'       => ['required', 'max:255'],
 				     'description' => ['required'],
-				     'price'       => ['required'],
+				     'price'       => ['required','numeric'],
 				     'category_id' => ['required'],
 				     'photo.*'     => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
 			     ]
