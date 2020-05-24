@@ -17,6 +17,7 @@ Auth::routes();
 //Condicions i terminis
 Route::get('/condiciones','Condiciones@index')->name('condiciones');
 
+//RUTES QUE POTS ENTRAR SI ESTAS LOGIN
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/home', 'ProductsController@index')->name('home');
 	Route::get('/shop', 'ProductsController@index')->name('shop');

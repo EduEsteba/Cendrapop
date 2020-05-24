@@ -5,13 +5,14 @@ use App\Product;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class User extends Authenticatable implements HasMedia
+
+
+class User extends Authenticatable 
 {
     use Notifiable;
-	use HasMediaTrait;
+    protected $table = 'users';   
+    public $timestamps = true;
 
     /**
      * The attributes that are mass assignable.

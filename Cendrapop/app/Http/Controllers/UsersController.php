@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Validator;
 
 
 class UsersController extends Controller {
-
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
@@ -50,9 +49,7 @@ class UsersController extends Controller {
 				     'name'     => ['required', 'string', 'max:255'],
 					 'email'    => ['required', 'string', 'email', 'max:255'],				     
 					 'photo'    => ['image', 'mimes:jpeg,png,jpg', 'max:2048'],
-
 				 ]
-
 		);
 
 
@@ -73,16 +70,11 @@ class UsersController extends Controller {
 				$user->photo = $filename;
 			}
 			$user->save();
+		
+			return redirect(route('profile.show'))->with('success', 'Details Updated successfully!');
+			}
 
-			
-
-		}
-
-			
-
-		return back()->withErrors($validator->errors())->withInput()->with('success', 'Perfil actualitzat!');
-
-
+		return back()->withErrors($validator->errors())->withInput()->with('error', 'Problem Updating Profile!');
 	}
 
 	
@@ -92,18 +84,11 @@ class UsersController extends Controller {
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 	public function destroy($id) {
-		$user       = User::find($id);
+		$user = User::find($id);
+		$image_path = public_path() . '/uploads/users/' . $user->photo;
+		File::delete($image_path);
 		$user->delete();
 
 		return redirect(route('home'));
 	}
-
-	public function destroyadmin($id) {
-		$user       = User::find($id);
-		$user->delete();
-
-		return redirect(route('home'));
-	}
-
-
 }
