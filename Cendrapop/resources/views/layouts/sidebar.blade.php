@@ -1,3 +1,4 @@
+<!--Navbar que nomes es veu en mode movil-->
 <br>
 <nav class=" navbar-light bg-light d-sm-block d-md-none d-lg-none">
   <p class="navbar-toggler text-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,6 +7,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <div class="list-group list-group-flush">
+    <a href="{{ route('home') }}" class="list-group-item list-group-item-action bg-light"><i class="fas fa-home"></i>Inici</a>
     <a href="{{ route('profile.show') }}" class="list-group-item list-group-item-action bg-light"><i class="far fa-user"></i> Perfil</a>
     <a href="{{ route('products.new') }}" class="list-group-item list-group-item-action bg-light" id="nouproducte"><i class="fas fa-plus"></i> Nou Producte</a>
     

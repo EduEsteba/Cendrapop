@@ -24,8 +24,8 @@
 
 						</div>
 				</div>
-				<div class="col-lg-9">
-					<div class="shop-header mb-20">
+				<div class="col-lg-12">
+					<div>
 						<div class="row">
 							<!--<div class="col-lg-6 col-md-6 col-sm-12 mb-sm-20 d-flex align-items-center">
 								<p class="result-show-message">{{ __('Mostrant') }} {{ $products->firstItem() }}–{{ $products->lastItem() }} de {{ $products->total() }} {{ __(' resultats') }}</p>
@@ -55,20 +55,13 @@
 							</div>
 						@else
 							@foreach($products as $product)
-								<div class="col-sm-2 col-md-3 py-5">
-											<div style="height: 100%;">
-											<a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">
-												<img src="/uploads/products/{{ $product->images->first()->file_name }}" class="img-fluid" alt="" style="max-height:100%;max-width: 100%;">
-											</a>
-											<div>
-											<p class="text-center"><a href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">{{ $product->title }}</a></p>
-											<p class="text-center">{{ $product->price }}€</p>
-											</div>
- 											</div>
-											
-											
-										
-								</div>
+							<div class="card col-sm-12 col-md-3 py-5 text-center" style="width: 100%;height: 100%;border: none;margin:auto; background-color: transparent">
+  								<a href="{{ url('products/show') }}/{{ $product->id }}"><img class="card-img-top" src="/uploads/products/{{ $product->images->first()->file_name }}"  alt="Card image cap"></a>
+    								<a class="card-title" href="{{ url('products/show') }}/{{ $product->id }}" tabindex="-1">{{ $product->title }}</a>
+    								<p class="card-text">{{ $product->price }}€</p>
+							</div>
+
+
 							@endforeach
 						@endif
 					</div>
