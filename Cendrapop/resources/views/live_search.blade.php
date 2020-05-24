@@ -27,6 +27,7 @@
          <th>Nom</th>
          <th>E-Mail</th>
          <th>Rol</th>
+         <th>Accions</th>
         </tr>
        </thead>
        <tbody>

@@ -47,21 +47,7 @@ class LiveSearch extends Controller
          <td>'.$row->name.'</td>
          <td>'.$row->email.'</td>
          <td>'.$row->role.'</td>
-       
-         <!--<td>
-         <form action="/profile/dropadmin/'.$row->id.'" metho="POST">
-                <button type="submit" class="btn btn-danger" style="display:inline">
-         </form>
-
-
-
-
-              <a class="btn btn-info" href="profile/edit/'.$row->id.'"><i class="fas fa-trash"></i> Editar</a>
-
-         </td>-->
-
-
-
+         <td><a href="/deleteuser/'.$row->id.' "class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</a></td>
         ';
        }
       }

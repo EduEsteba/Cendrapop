@@ -47,8 +47,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	//Borrar usuaris,(no funciona, encara)
 	Route::get('/profile/dropadmin/{id}', 'UsersController@destroyadmin')->name('profile.dropadmin');
+
 	//Borrar productes,(no funciona, encara)
 	Route::get('/products/drop/{id}', 'ProductsController@destroy')->name('products.drop');
+
 	//Control de categories
 	Route::get('/category/show', 'CategoriesController@index')->name('categories.show');
 	Route::get('/category/new', 'CategoriesController@create')->name('categories.new');
@@ -56,13 +58,17 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/category/edit/{id}', 'CategoriesController@edit')->name('categories.edit');
 	Route::post('/category/{id}/update', 'CategoriesController@update')->name('categories.update');
 	Route::get('/category/drop/{id}', 'CategoriesController@destroy')->name('categories.drop');
+
 	//Control d'usuaris	
 	Route::get('/live_search', 'LiveSearch@index')->name('live_search');
 	Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
+	Route::get('/deleteuser/{id}', 'UsersController@destroy')->name('userdeleteadmin');
+
 		//Usuris JSON
 		Route::get('/live_search/json', 'JsonGenerateController@json')->name('json');
 		//Usuaris XML
 		Route::get('/users/xml','XMLController@download')->name('usuaris.xml');
+
 	//Control de productes
 	Route::get('/live_search_products', 'LiveSearchProducts@index')->name('live_search_products');
 	Route::get('/live_search_products/action', 'LiveSearchProducts@actionproducts')->name('live_search_products.action');
@@ -71,6 +77,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('/live_search_products/json', 'JsonGenerateController@jsonProducts')->name('products_json');
 		//Productes XML
 		Route::get('/products/xml','XMLController@download_products')->name('products_xml');
+
 	//Control dels comentaris
 	Route::get('/live_search_comentaris', 'LiveSearchComentaris@index')->name('live_search_comentaris');
 	Route::get('/live_search_comentaris/action', 'LiveSearchComentaris@action')->name('live_search_comentaris.action');
@@ -79,6 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('/live_search_missatges', 'JsonGenerateController@jsonComentaris')->name('comentaris_json');
 		//Productes XML
 		Route::get('/comentaris/xml','XMLController@download_comentaris')->name('comentaris_xml');
+
 	//API
 	Route::get('/users', 'ApiController@indexUsers')->name('usersapi');
 	Route::get('/products', 'ApiController@indexProducts')->name('productsapi');
