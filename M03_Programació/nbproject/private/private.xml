@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Eduard/Desktop/CendraPop/src/cendrapop/CendraPop.java</file>
-            <file>file:/C:/Users/Eduard/Desktop/CendraPop/src/Controladores/ProductsJpaController.java</file>
-            <file>file:/C:/Users/Eduard/Desktop/CendraPop/src/Controladores/UsersJpaController.java</file>
-            <file>file:/C:/Users/Eduard/Desktop/CendraPop/src/Controladores/MessagesJpaController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/MigrationsJpaController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/MessagesJpaController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/UsersJpaController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/CategoriesJpaController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/DbController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Entidades/Users.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Entidades/Messages.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/ProductImagesJpaController.java</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/META-INF/persistence.xml</file>
+            <file>file:/C:/xampp/htdocs/Cendrapop/M03_Programació/src/Controladores/ProductsJpaController.java</file>
         </group>
     </open-files>
 </project-private>
