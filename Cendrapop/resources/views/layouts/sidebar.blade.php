@@ -1,7 +1,11 @@
 <!--Navbar que nomes es veu en mode movil-->
 <br>
 <nav class=" navbar-light bg-light d-sm-block d-md-none d-lg-none">
+
+
   <p class="navbar-toggler text-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#">Cendrapop</a>
+
     <span class="navbar-toggler-icon"></span>
 </p>
 
@@ -19,6 +23,13 @@
 
 @endif
       
+<a class="list-group-item list-group-item-action bg-light" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="fas fa-sign-out-alt"> Tancar la sessió</i>
+</a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+@csrf
+</form></a>
+
          
 
       </div>
@@ -29,8 +40,7 @@
 <div class="d-flex sidebar " >
     <div class="bg-light border-right col-md-2 d-none d-sm-block d-md-block" >
       <div class="sidebar-heading">
-      <a class="navbar-brand" href="{{ url('/') }}">        <img src="{{url('/logo/logo_transparent.png')}}" class="img-fluid">
-</a>
+      <a class="navbar-brand" href="{{ url('/') }}">        <img src="{{url('/logo/logo_transparent.png')}}" class="img-fluid"></a>
       </div>
       <span class="subtitle">Benvingut:  <b> {{ Auth::user()->name }}</b></span>
         
