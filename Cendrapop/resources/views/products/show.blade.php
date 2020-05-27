@@ -8,16 +8,13 @@
 			</div>
 			<div class="row">
 				<div class="col-md-5 col-lg-5 col-sm-5">
-					<div class="product-images">
 						@if ( count($product->images) > 0)
-							<div class="image-thumbs row">
 								@foreach ($product->images as $image)
-										<img class="border zoom  " src="/uploads/products/{{ $image->file_name }}" id="logo" class="img-thumbnail">
+										<img class="border img-fluid" src="/uploads/products/{{ $image->file_name }}" id="logo" class="img-thumbnail">
 									
 								@endforeach
-							</div>
 						@endif
-					</div>
+					
 				</div>
 				<div class="col-md-5">
 						<h1 class="product-title my-4">{{ $product->title }}</h1>
